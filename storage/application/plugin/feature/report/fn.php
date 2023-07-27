@@ -325,6 +325,14 @@ function report_hook_playsmsd() {
  * @return string
  */
 function report_resolve_sender($uid, $sender) {
+
+//////////////////////////////////////////////////////////////////////////////
+	if (substr($sender, 0, 3) == '393') {
+		$sender= '+'.$sender;
+		$sender= str_replace('+393', '3', $sender);	
+	}
+//////////////////////////////////////////////////////////////////////////////
+
 	$final_sender = "<div class='report_sender'>" . $sender . "</div>";
 	
 	if (substr($sender, 0, 1) == '@') {

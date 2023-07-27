@@ -21,7 +21,7 @@ defined('_SECURE_') or die('Forbidden');
 if (!auth_isvalid()) {
 	auth_block();
 }
-
+ 
 if (auth_issubuser()) {
 
 @set_time_limit(0);
@@ -88,7 +88,6 @@ switch (_OP_) {
 			<div class=table-responsive>
 			<table class=playsms-table-list>
 			<thead>
-//////////////////////////////////
 			<tr>
 				<th width=15%>" . _('Date/Time') . "</th>
 				<th width=10%>" . _('Sender') . "</th>
@@ -98,7 +97,8 @@ switch (_OP_) {
 			</tr>
 			</thead>
 			<tbody>";
-		
+//////////////////////////////////
+
 		$i = $nav['top'];
 		$j = 0;
 		for ($j = 0; $j < count($list); $j++) {
@@ -155,7 +155,7 @@ switch (_OP_) {
 			if ($list[$j]['p_status'] == 2) {
 				$p_charge = '0.00';
 			}
-
+/////////////////////////////resend........
 			$msg = $list[$j]['p_msg'];
 			$p_msg = core_display_text($msg);
 			if ($msg && $p_dst) {
@@ -428,6 +428,7 @@ switch (_OP_) {
 				$p_charge = '0.00';
 			}
 
+/////////////////////////////resend........
 			$msg = $list[$j]['p_msg'];
 			$p_msg = core_display_text($msg);
 			if ($msg && $p_dst) {
