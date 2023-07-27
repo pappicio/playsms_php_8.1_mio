@@ -1,0 +1,130 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PlaySMS\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-29 17:59+0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Yahia Farajallah <admin@barqsms.com>\n"
+"Language-Team: Yahia Farajallah <admin@barqsms.com>\n"
+"Language: ar_SA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+
+#, php-format
+msgid "%s do not have enough balance for sending %d SMS at %s credit"
+msgstr ""
+
+msgid "CSV file format"
+msgstr "صيغة ملف CSV"
+
+msgid "Cancel send from file"
+msgstr "إلغاء الإرسال من ملف"
+
+msgid "Confirmation"
+msgstr "تأكيد الاستيراد"
+
+msgid "Destination number"
+msgstr "الوجهة"
+
+#, fuzzy
+msgid "Discharged entries"
+msgstr "الإدخالات غير الصالحة"
+
+msgid "Error occurred after uploading CSV file"
+msgstr ""
+
+msgid "Error occurred while opening CSV file"
+msgstr ""
+
+msgid "Error occurred while verifying CSV file"
+msgstr ""
+
+msgid "Fail to deliver uploaded SMS to queue"
+msgstr ""
+
+#, php-format
+msgid "Found %d of %d discharged entries"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "Found %d of %d valid entries"
+msgstr "إرسال رسالة للأرقام الصالحة"
+
+#, fuzzy
+msgid "Found discharged entries in uploaded file"
+msgstr "إدخالات غير صالحة في الملف المحمَّل"
+
+msgid "Found valid entries in uploaded file"
+msgstr "الإدخالات الصالحة في الملف المحمَّل"
+
+msgid "Invalid session ID"
+msgstr "رقم جلسة غير صالح"
+
+msgid "Message"
+msgstr "الرسالة"
+
+#, fuzzy, php-format
+msgid "No valid entries found from %d uploaded rows"
+msgstr "الإدخالات الصالحة في الملف المحمَّل"
+
+msgid "Please select CSV file"
+msgstr "الرجاء اختيار ملف CSV  "
+
+#, fuzzy
+msgid "SMS to valid numbers in uploaded file has been delivered to queue"
+msgstr "تم إرسال الرسالة للأرقام الصالحة في الملف المحمَّل"
+
+msgid "Select page size"
+msgstr ""
+
+msgid "Send SMS to valid entries"
+msgstr "إرسال رسالة للأرقام الصالحة"
+
+msgid "Send from file"
+msgstr "إرسال من ملف"
+
+msgid "Send from file has been cancelled"
+msgstr "تم إلغاء الإرسال من ملف"
+
+#, fuzzy, php-format
+msgid "Send from file limit of %d SMS have been reached"
+msgstr "تم إلغاء الإرسال من ملف"
+
+msgid "Upload file"
+msgstr "تحميل الملف "
+
+msgid "Uploaded file"
+msgstr "الملف المحمَّل"
+
+msgid "Username"
+msgstr "اسم المستخدم"
+
+#, fuzzy
+msgid "Valid entries"
+msgstr "الإدخالات الصالحة"
+
+msgid "Verification results"
+msgstr ""
+
+msgid "Your choice"
+msgstr "خيارك"
+
+msgid "destination number, message"
+msgstr "رقم الجوال, الرسالة"
+
+msgid "destination number, message, username"
+msgstr "رقم الجوال, الرسالة, اسم المستخدم"
+
+#, fuzzy
+msgid "discharged entries"
+msgstr "الإدخالات غير الصالحة"
+
+msgid "of"
+msgstr "من"
+
+msgid "valid entries"
+msgstr "الإدخالات الصالحة"

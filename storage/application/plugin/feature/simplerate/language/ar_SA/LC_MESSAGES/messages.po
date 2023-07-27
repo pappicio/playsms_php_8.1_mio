@@ -1,0 +1,194 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PlaySMS\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-29 17:59+0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Yahia Farajallah <admin@barqsms.com>\n"
+"Language-Team: Yahia Farajallah <admin@barqsms.com>\n"
+"Language: ar_SA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+
+msgid "Action"
+msgstr "إجراءات"
+
+#, fuzzy
+msgid "Add card"
+msgstr "إضافة تعرفة"
+
+msgid "Add rate"
+msgstr "إضافة تعرفة"
+
+#, fuzzy
+msgid "Add user"
+msgstr "إضافة تعرفة"
+
+#, fuzzy, php-format
+msgid "Are you sure you want to delete card %s ?"
+msgstr "هل تود بالتأكيد حذف هذه التعرفة؟"
+
+#, fuzzy, php-format
+msgid "Are you sure you want to delete rate %s ?"
+msgstr "هل تود بالتأكيد حذف هذه التعرفة؟"
+
+#, fuzzy, php-format
+msgid "Are you sure you want to remove user %s ?"
+msgstr "هل تود بالتأكيد حذف هذه التعرفة؟"
+
+#, fuzzy, php-format
+msgid "Card %s has been added"
+msgstr "تم إضافة التعرفة"
+
+#, fuzzy, php-format
+msgid "Card %s has been updated"
+msgstr "تم الحذف"
+
+#, fuzzy, php-format
+msgid "Card id:%d has been deleted"
+msgstr "تم الحذف"
+
+#, php-format
+msgid "Card id:%d not found"
+msgstr ""
+
+#, php-format
+msgid "Card not found"
+msgstr ""
+
+msgid "Destination"
+msgstr "الوجهة"
+
+#, fuzzy
+msgid "Edit card"
+msgstr "تعديل التعرفة"
+
+msgid "Edit rate"
+msgstr "تعديل التعرفة"
+
+#, fuzzy, php-format
+msgid "Fail to add card %s"
+msgstr "فشل حفظ التعرفة"
+
+#, fuzzy, php-format
+msgid "Fail to add rate %s"
+msgstr "فشل حفظ التعرفة"
+
+#, php-format
+msgid "Fail to add rate %s to card id:%d"
+msgstr ""
+
+#, php-format
+msgid "Fail to add user %s to card %s"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "Fail to delete card id:%d"
+msgstr "فشل حذف التعرفة"
+
+#, fuzzy, php-format
+msgid "Fail to delete rate id:%d"
+msgstr "فشل حذف التعرفة"
+
+#, php-format
+msgid "Fail to remove user id:%d"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "Fail to update card %s"
+msgstr "فشل حذف التعرفة"
+
+msgid "ID"
+msgstr ""
+
+msgid "Last update"
+msgstr ""
+
+msgid "Manage SMS rate"
+msgstr "إدارة التعرفة"
+
+#, fuzzy
+msgid "Manage card"
+msgstr "إدارة التعرفة"
+
+#, fuzzy
+msgid "Manage rate"
+msgstr "إدارة التعرفة"
+
+#, fuzzy
+msgid "Manage user"
+msgstr "إدارة التعرفة"
+
+msgid "Name"
+msgstr ""
+
+msgid "Notes"
+msgstr ""
+
+msgid "Prefix"
+msgstr "المقدمة"
+
+msgid "Rate"
+msgstr "التعرفة"
+
+#, fuzzy, php-format
+msgid "Rate %s has been added"
+msgstr "تم إضافة التعرفة"
+
+#, fuzzy, php-format
+msgid "Rate %s has been updated"
+msgstr "تم الحذف"
+
+#, fuzzy, php-format
+msgid "Rate %s is not updated"
+msgstr "تم الحذف"
+
+#, fuzzy, php-format
+msgid "Rate id:%d has been deleted"
+msgstr "تم الحذف"
+
+#, php-format
+msgid "Rate id:%d not found"
+msgstr ""
+
+msgid "Rate not found"
+msgstr ""
+
+msgid "Save"
+msgstr "حفظ"
+
+msgid "User"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "User %s has been added"
+msgstr "تم إضافة التعرفة"
+
+#, fuzzy, php-format
+msgid "User %s has been removed"
+msgstr "تم الحفظ"
+
+#, php-format
+msgid "User not found"
+msgstr ""
+
+msgid "You must fill all fields"
+msgstr "يجب ملء كافة الحقول"
+
+msgid "You must select user"
+msgstr ""
+
+msgid "index.php?app=main&inc=feature_simplerate&route=card&op=card_add"
+msgstr ""
+
+msgid ""
+"index.php?app=main&inc=feature_simplerate&route=rate&op=rate_add&card_id="
+msgstr ""
+
+msgid ""
+"index.php?app=main&inc=feature_simplerate&route=user&op=user_add&card_id="
+msgstr ""

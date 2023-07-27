@@ -1,0 +1,385 @@
+.error_string {
+	font-weight: normal;
+	font-size: medium;
+	color: #c0392b;
+	background-color: #ecf0f1;
+	margin: 0 0 10px 0;
+	text-align: center;
+	padding: 3px;
+}
+
+.status_handled {
+	width: 10px;
+	height: 10px;
+	background-color: #2ECC71;
+	color: #2ECC71;
+	display: inline-block;
+	border-radius: 3px;
+}
+
+.status_unhandled {
+	width: 10px;
+	height: 10px;
+	background-color: #E74C3C;
+	color: #E74C3C;
+	display: inline-block;
+	border-radius: 3px;
+}
+
+.status_sent {
+	width: 10px;
+	height: 10px;
+	background-color: #2ECC71;
+	color: #2ECC71;
+	display: inline-block;
+	border-radius: 3px;
+}
+
+.status_failed {
+	width: 10px;
+	height: 10px;
+	background-color: #E74C3C;
+	color: #E74C3C;
+	display: inline-block;
+	border-radius: 3px;
+}
+
+.status_delivered {
+	width: 10px;
+	height: 10px;
+	background-color: #3498DB;
+	color: #3498DB;
+	display: inline-block;
+	border-radius: 3px;
+}
+
+.status_pending {
+	width: 10px;
+	height: 10px;
+	background-color: #F1C40F;
+	color: #F1C40F;
+	display: inline-block;
+	border-radius: 3px;
+}
+
+.status_active {
+	width: 10px;
+	height: 10px;
+	background-color: #2ECC71;
+	color: #2ECC71;
+	display: inline-block;
+	border-radius: 3px;
+}
+
+.status_inactive {
+	width: 10px;
+	height: 10px;
+	background-color: #E74C3C;
+	color: #E74C3C;
+	display: inline-block;
+	border-radius: 3px;
+}
+
+.status_enabled {
+	width: 34px;
+	height: 17px;
+	background-color: #3FDD82;
+	color: #3FDD82;
+	display: inline-block;
+	border-radius: 3px;
+}
+
+.status_disabled {
+	width: 34px;
+	height: 17px;
+	background-color: #F85D4D;
+	color: #F85D4D;
+	display: inline-block;
+	border-radius: 3px;
+}
+
+.button_back {
+	margin: 5px 0 5px 0;
+}
+
+.search_box {
+	text-align: left;
+	margin-right: 5px;
+}
+
+.search_box_select {
+	float: left;
+	text-align: left;
+	margin-right: 5px;
+}
+
+.search_box_input {
+	text-align: left;
+}
+
+.search_input_category {
+	width: 110px !important;
+	display: inline;
+}
+
+.search_input_keyword {
+	width: 220px !important;
+}
+
+.dropdown-menu {
+	/* */
+}
+
+.navbar-right {
+	/* */
+}
+
+.navbar-left {
+	/* */
+}
+
+.playsms-navbar {
+	/* */
+}
+
+.playsms-pagination {
+	padding: 0;
+	margin: 0;
+}
+
+.playsms-mandatory {
+	float: right;
+	display: inline-block;
+}
+
+.playsms-tooltip {
+	display: inline-block;
+}
+
+.playsms-icon {
+	display: inline-block;
+}
+
+.playsms-logo {
+	max-width: 300px;
+	width: 100%;
+}
+
+.playsms-login-box {
+	max-width: 300px;
+	width: 100%;
+}
+
+.playsms-login-input {
+	max-width: 300px;
+	width: 100%;
+}
+
+.playsms-label-sizer {
+	max-width: 300px;
+	width: 30%;
+}
+
+.playsms-input-sizer {
+	max-width: 300px;
+	width: 100%;
+}
+
+.playsms-dialog-text {
+	font-size: 14px;
+	font-weight: normal;
+	text-align: left;
+}
+
+.page-header-title {
+	margin-bottom: 20px;
+}
+
+.page-header-subtitle {
+	margin-bottom: 20px;
+}
+
+.playsms-login-box {
+	/* */
+}
+
+.playsms-login-input {
+	/* */
+}
+
+.playsms-actions-box {
+	display: block;
+	overflow: auto;
+	padding: 0;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.playsms-table, .playsms-table-list {
+	width: 100%;
+}
+
+.msg_label {
+	padding-right: 2px;
+	padding-bottom: 2px;
+}
+
+.msg_text {
+	padding-bottom: 10px;
+}
+
+.msg_option {
+	text-align: left;
+	padding-right: 10px;
+	float: left;
+}
+
+.msg_info {
+	text-align: left;
+	padding-right: 10px;
+	float: left;
+}
+
+.msg_status {
+	text-align: left;
+	padding-right: 10px;
+}
+
+.msg_price {
+	text-align: left;
+	padding-right: 10px;
+}
+
+.msg_rate {
+	text-align: left;
+	padding-right: 10px;
+}
+
+.msg_charge {
+	text-align: left;
+	padding-right: 10px;
+}
+
+/* IDs */
+
+#main-menu {
+	width: 100%;
+}
+
+#main-submenu {
+	width: 100%;
+}
+
+#main-submenu div {
+	padding: 5px;
+}
+
+#main-content {
+	height: 100%;
+	overflow: hidden;
+}
+
+#main-footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+#main-footer p {
+	text-align: center;
+	vertical-align: middle !important;
+}
+
+#txtcount {
+	background-color: transparent;
+	border: 0px solid;
+	font-weight: normal;
+}
+
+#user_inbox_msg {
+	border-radius: 3px;
+	word-break: break-all;
+	-ms-word-break: break-all;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+
+#user_incoming_msg {
+	border-radius: 3px;
+	word-break: break-all;
+	-ms-word-break: break-all;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+
+#user_outgoing_msg {
+	border-radius: 3px;
+	word-break: break-all;
+	-ms-word-break: break-all;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+
+#all_inbox_msg {
+	border-radius: 3px;
+	word-break: break-all;
+	-ms-word-break: break-all;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+
+#all_incoming_msg {
+	border-radius: 3px;
+	word-break: break-all;
+	-ms-word-break: break-all;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+
+#all_outgoing_msg {
+	border-radius: 3px;
+	word-break: break-all;
+	-ms-word-break: break-all;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+
+#sandbox_msg {
+	border-radius: 3px;
+	word-break: break-all;
+	-ms-word-break: break-all;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+
+#msg_template {
+	text-align: left;
+}
+
+#msg_template_select {
+	outline: none;
+}
+
+#msg_flash, #msg_unicode {
+	margin-right: 5px;
+}
+
+#msg_combo_sendto {
+	/* */
+}
+
+#message {
+	outline: none;
+}
+
+#submenu-credit-show {
+	display: inline;
+}
+

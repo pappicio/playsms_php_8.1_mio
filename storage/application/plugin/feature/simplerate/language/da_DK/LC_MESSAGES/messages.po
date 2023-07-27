@@ -1,0 +1,192 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: playSMS\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Jens Hyllegaard <jens.hyllegaard@gmail.com>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.4\n"
+
+msgid "Action"
+msgstr "Handling"
+
+#, fuzzy
+msgid "Add card"
+msgstr "Tilføj takst"
+
+msgid "Add rate"
+msgstr "Tilføj takst"
+
+#, fuzzy
+msgid "Add user"
+msgstr "Tilføj takst"
+
+#, fuzzy, php-format
+msgid "Are you sure you want to delete card %s ?"
+msgstr "Er du sikker på at du ønsker at slette takst?"
+
+#, fuzzy, php-format
+msgid "Are you sure you want to delete rate %s ?"
+msgstr "Er du sikker på at du ønsker at slette takst?"
+
+#, fuzzy, php-format
+msgid "Are you sure you want to remove user %s ?"
+msgstr "Er du sikker på at du ønsker at slette takst?"
+
+#, fuzzy, php-format
+msgid "Card %s has been added"
+msgstr "Taksten er allerede tilføjet"
+
+#, fuzzy, php-format
+msgid "Card %s has been updated"
+msgstr "Taksten er blevet slettet"
+
+#, fuzzy, php-format
+msgid "Card id:%d has been deleted"
+msgstr "Taksten er blevet slettet"
+
+#, php-format
+msgid "Card id:%d not found"
+msgstr ""
+
+#, php-format
+msgid "Card not found"
+msgstr ""
+
+msgid "Destination"
+msgstr "Destination"
+
+#, fuzzy
+msgid "Edit card"
+msgstr "Rediger takst"
+
+msgid "Edit rate"
+msgstr "Rediger takst"
+
+#, fuzzy, php-format
+msgid "Fail to add card %s"
+msgstr "Kunne ikke gemme rate"
+
+#, fuzzy, php-format
+msgid "Fail to add rate %s"
+msgstr "Kunne ikke gemme rate"
+
+#, php-format
+msgid "Fail to add rate %s to card id:%d"
+msgstr ""
+
+#, php-format
+msgid "Fail to add user %s to card %s"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "Fail to delete card id:%d"
+msgstr "Kunne ikke slette rate"
+
+#, fuzzy, php-format
+msgid "Fail to delete rate id:%d"
+msgstr "Kunne ikke slette rate"
+
+#, php-format
+msgid "Fail to remove user id:%d"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "Fail to update card %s"
+msgstr "Kunne ikke slette rate"
+
+msgid "ID"
+msgstr ""
+
+msgid "Last update"
+msgstr ""
+
+msgid "Manage SMS rate"
+msgstr "Håndter SMS rate"
+
+#, fuzzy
+msgid "Manage card"
+msgstr "Håndter SMS rate"
+
+#, fuzzy
+msgid "Manage rate"
+msgstr "Håndter SMS rate"
+
+#, fuzzy
+msgid "Manage user"
+msgstr "Håndter SMS rate"
+
+msgid "Name"
+msgstr ""
+
+msgid "Notes"
+msgstr ""
+
+msgid "Prefix"
+msgstr "Præfiks"
+
+msgid "Rate"
+msgstr "Takst"
+
+#, fuzzy, php-format
+msgid "Rate %s has been added"
+msgstr "Taksten er allerede tilføjet"
+
+#, fuzzy, php-format
+msgid "Rate %s has been updated"
+msgstr "Taksten er blevet slettet"
+
+#, fuzzy, php-format
+msgid "Rate %s is not updated"
+msgstr "Taksten er blevet slettet"
+
+#, fuzzy, php-format
+msgid "Rate id:%d has been deleted"
+msgstr "Taksten er blevet slettet"
+
+#, php-format
+msgid "Rate id:%d not found"
+msgstr ""
+
+msgid "Rate not found"
+msgstr ""
+
+msgid "Save"
+msgstr "Gem"
+
+msgid "User"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "User %s has been added"
+msgstr "Taksten er allerede tilføjet"
+
+#, fuzzy, php-format
+msgid "User %s has been removed"
+msgstr "Taksten er blevet gemt"
+
+#, php-format
+msgid "User not found"
+msgstr ""
+
+msgid "You must fill all fields"
+msgstr "Du skal udfylde alle felter"
+
+msgid "You must select user"
+msgstr ""
+
+msgid "index.php?app=main&inc=feature_simplerate&route=card&op=card_add"
+msgstr ""
+
+msgid ""
+"index.php?app=main&inc=feature_simplerate&route=rate&op=rate_add&card_id="
+msgstr ""
+
+msgid ""
+"index.php?app=main&inc=feature_simplerate&route=user&op=user_add&card_id="
+msgstr ""

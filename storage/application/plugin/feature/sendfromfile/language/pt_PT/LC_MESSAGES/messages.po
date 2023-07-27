@@ -1,0 +1,129 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-29 17:59+0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.5\n"
+
+#, php-format
+msgid "%s do not have enough balance for sending %d SMS at %s credit"
+msgstr ""
+
+msgid "CSV file format"
+msgstr "Formato do ficheiro CSV"
+
+msgid "Cancel send from file"
+msgstr "Cancelar envio do ficheiro"
+
+msgid "Confirmation"
+msgstr "Confirmação"
+
+msgid "Destination number"
+msgstr "Número de destino"
+
+#, fuzzy
+msgid "Discharged entries"
+msgstr "entradas inválidas"
+
+msgid "Error occurred after uploading CSV file"
+msgstr ""
+
+msgid "Error occurred while opening CSV file"
+msgstr ""
+
+msgid "Error occurred while verifying CSV file"
+msgstr ""
+
+msgid "Fail to deliver uploaded SMS to queue"
+msgstr ""
+
+#, php-format
+msgid "Found %d of %d discharged entries"
+msgstr ""
+
+#, fuzzy, php-format
+msgid "Found %d of %d valid entries"
+msgstr "Enviar SMS para entradas válidas"
+
+#, fuzzy
+msgid "Found discharged entries in uploaded file"
+msgstr "Encontradas entradas inválidas no arquivo enviado"
+
+msgid "Found valid entries in uploaded file"
+msgstr "Encontradas entradas válidas no arquivo enviado"
+
+msgid "Invalid session ID"
+msgstr "ID de sessão inválido"
+
+msgid "Message"
+msgstr "Mensagem"
+
+#, fuzzy, php-format
+msgid "No valid entries found from %d uploaded rows"
+msgstr "Encontradas entradas válidas no arquivo enviado"
+
+msgid "Please select CSV file"
+msgstr "Por favor selecione o ficheiro CSV"
+
+#, fuzzy
+msgid "SMS to valid numbers in uploaded file has been delivered to queue"
+msgstr "O SMS foi enviado para os números válidos no arquivo enviado"
+
+msgid "Select page size"
+msgstr ""
+
+msgid "Send SMS to valid entries"
+msgstr "Enviar SMS para entradas válidas"
+
+msgid "Send from file"
+msgstr "Enviar de arquivo"
+
+msgid "Send from file has been cancelled"
+msgstr "Enviar de arquivo foi cancelado"
+
+#, fuzzy, php-format
+msgid "Send from file limit of %d SMS have been reached"
+msgstr "Enviar de arquivo foi cancelado"
+
+msgid "Upload file"
+msgstr "Enviar arquivo"
+
+msgid "Uploaded file"
+msgstr "Arquivo enviado"
+
+msgid "Username"
+msgstr "Nome de Utilizador"
+
+#, fuzzy
+msgid "Valid entries"
+msgstr "entradas válidas"
+
+msgid "Verification results"
+msgstr ""
+
+msgid "Your choice"
+msgstr "Sua escolha"
+
+#, fuzzy
+msgid "destination number, message"
+msgstr "formato: número do destinatário, mensagem"
+
+msgid "destination number, message, username"
+msgstr "formato: número do destinatário, mensagem, utilizador"
+
+#, fuzzy
+msgid "discharged entries"
+msgstr "entradas inválidas"
+
+msgid "of"
+msgstr "de"
+
+msgid "valid entries"
+msgstr "entradas válidas"

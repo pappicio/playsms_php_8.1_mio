@@ -1,0 +1,5 @@
+msgid "Refresh"
+msgstr ""
+
+msgid "View log"
+msgstr ""

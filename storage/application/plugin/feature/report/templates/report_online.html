@@ -1,0 +1,54 @@
+<h2 class="page-header-title">{{ Report }}</h2>
+<h3 class="page-header-subtitle">{{ Whose online }}</h3>
+<div class=table-responsive>
+<table id=playsms-table-list class=playsms-table-list>
+	<thead>
+		<tr>
+			<th width=20%>{{ User }}</th>
+			<th width=20%>{{ Last update }}</th>
+			<th width=20%>{{ Current IP address }}</th>
+			<th width=37%>{{ User agent }}</th>
+			<th width=3% nowrap>{{ $icon_config['action'] }}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<loop.data>
+			<tr class={{ data.tr_class }}>
+				<td>{{ data.c_username }} {{ data.c_isadmin }}</td>
+				<td>{{ data.login_status }} {{ data.last_update }}</td>
+				<td>{{ data.current_ip }}</td>
+				<td>{{ data.user_agent }}</td>
+				<td>{{ data.action }}</td>
+			</tr>
+		</loop.data>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td id='playsms-table-pager' class='playsms-table-pager' colspan=5>
+			<div class='form-inline pull-right'>
+				<div class='btn-group btn-group-sm mx-1' role='group'>
+					<button type='button' class='btn btn-secondary first'>&#8676;</button>
+					<button type='button' class='btn btn-secondary prev'>&larr;</button>
+					<span class='pagedisplay'></span>
+				</div>
+				<div class='btn-group btn-group-sm mx-1' role='group'>
+					<button type='button' class='btn btn-secondary next' title='next'>&rarr;</button>
+					<button type='button' class='btn btn-secondary last' title='last'>&#8677;</button>
+				</div>
+				<select class='form-control-sm custom-select px-1 pagesize' title='{{ Select page size }}'>
+					<option selected='selected' value='10'>10</option>
+					<option value='20'>20</option>
+					<option value='50'>50</option>
+					<option value='100'>100</option>
+				</select>
+			</div>
+			</td>
+		</tr>
+	</tfoot>
+</table>
+</div>
+<script type='text/javascript'>
+	$(document).ready(function() { 
+		$('#playsms-table-list').tablesorterPager({container: $('#playsms-table-pager')}); 
+	});
+</script>
