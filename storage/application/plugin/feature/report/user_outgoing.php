@@ -276,8 +276,10 @@ switch (_OP_) {
 							'c_timestamp' => time(),
 							'flag_deleted' => '1' 
 						);
+////////delete sms
 						$conditions = array(
-							'uid' => $_SESSION['uid'],
+							//'uid' => $_SESSION['uid'],
+							'parent_uid' => user_getparentbyuid($user_config["uid"]),
 							'smslog_id' => $itemid,
 						);
 						if ($queue_code = trim($_REQUEST['queue_code'])) {
@@ -316,8 +318,8 @@ switch (_OP_) {
 		$table = _DB_PREF_ . "_tblSMSOutgoing AS A";
 		$fields = "B.username, A.p_gateway, A.p_smsc, A.smslog_id, A.p_dst, A.p_sms_type, A.p_msg, A.p_footer, A.p_datetime, A.p_update, A.p_status, A.parent_uid, A.queue_code";
 		$conditions = [
-			'B.uid' => $_SESSION['uid'],
-                        ////'A.parent_uid' => user_getparentbyuid($user_config["uid"]),
+			////'B.uid' => $_SESSION['uid'],
+                        'A.parent_uid' =>  ($user_config["uid"]),
 			'A.flag_deleted' => 0,
 		];
 		$extras = [];
@@ -482,8 +484,8 @@ switch (_OP_) {
 				$table = _DB_PREF_ . "_tblSMSOutgoing AS A";
 				$fields = "B.username, A.p_gateway, A.p_smsc, A.p_datetime, A.p_dst, A.p_msg, A.p_footer, A.p_status, A.queue_code";
 				$conditions = array(
-					'B.uid' => $_SESSION['uid'],
-					////'A.parent_uid' => user_getparentbyuid($user_config["uid"]),
+					////'B.uid' => $_SESSION['uid'],
+					'A.parent_uid' => ($user_config["uid"]),
 					'A.flag_deleted' => 0,
 				);
 				if ($queue_code = trim($_REQUEST['queue_code'])) {
@@ -547,7 +549,8 @@ switch (_OP_) {
 							'flag_deleted' => '1' 
 						);
 						$conditions = array(
-							'uid' => $_SESSION['uid'],
+							////'uid' => $_SESSION['uid'],
+							'parent_uid' => ($user_config["uid"]),
 							'smslog_id' => $itemid,
 						);
 						if ($queue_code = trim($_REQUEST['queue_code'])) {
