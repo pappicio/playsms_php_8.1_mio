@@ -19,7 +19,7 @@
  *     export PLAYSMS_WEB='/home/example/web'
  */
 
-$PLAYSMS_WEB = '';
+$PLAYSMS_WEB = '/var/www/playsms';
 
 // DO NOT EDIT PAST THIS LINE
 // ================================================================================
