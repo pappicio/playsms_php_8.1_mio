@@ -271,6 +271,8 @@ switch (_OP_) {
 				for ($i = 0; $i < $nav['limit']; $i++) {
 					$checkid = $_POST['checkid' . $i];
 					$itemid = $_POST['itemid' . $i];
+					$parent = user_getparentbyuid($user_config["uid"]);
+					$timepast = time() - (60 * 60 * 24 * 7);
 					if (($checkid == "on") && $itemid) {
 						$up = array(
 							'c_timestamp' => time(),
@@ -285,11 +287,13 @@ switch (_OP_) {
 						if ($queue_code = trim($_REQUEST['queue_code'])) {
 							$conditions['queue_code'] = $queue_code;
 						}
-						dba_update(_DB_PREF_ . '_tblSMSOutgoing', $up, $conditions);
+						//dba_update(_DB_PREF_ . '_tblSMSOutgoing', $up, $conditions);
+						$db_query = "UPDATE "._DB_PREF_."_tblSMSOutgoing SET c_timestamp='".time()."' , flag_deleted= '1'  WHERE c_timestamp < '$timepast' AND parent_uid = '$parent' AND smslog_id = '$itemid' ";
+						dba_query($db_query);
 					}
 				}
 				$ref = $nav['url'] . '&search_keyword=' . $search['keyword'] . '&page=' . $nav['page'] . '&nav=' . $nav['nav'];
-				$_SESSION['dialog']['info'][] = _('Selected outgoing message has been deleted');
+				$_SESSION['dialog']['info'][] = _('All messages older than 7 days, has been deleted');
 				header("Location: " . _u($ref));
 				exit();
 		}
