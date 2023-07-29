@@ -74,11 +74,31 @@ $menu_config[$menutab][] = array(
 	_('My feature messages'),
 	1
 );
+
+if (auth_isadmin()) {
 $menu_config[$menutab][] = array(
 	'index.php?app=main&inc=feature_report&route=user_outgoing&op=user_outgoing',
-	_('My sent messages'),
+	_('My Own sent messages'),
 	1
 );
+}
+
+if (auth_isuser()) {
+$menu_config[$menutab][] = array(
+	'index.php?app=main&inc=feature_report&route=user_outgoing&op=user_outgoing',
+	_('Subusers sent messages'),
+	1
+);
+}
+
+if (auth_issubuser()) {
+$menu_config[$menutab][] = array(
+	'index.php?app=main&inc=feature_report&route=user_outgoing&op=user_outgoing',
+	_('My Group sent messages'),
+	1
+);
+}
+
 
 $menu_config[$menutab][] = array(
 	"index.php?app=main&inc=feature_report&route=user",
