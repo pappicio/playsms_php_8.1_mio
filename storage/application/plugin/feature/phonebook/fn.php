@@ -316,7 +316,7 @@ function phonebook_hook_phonebook_webservices_output($keyword, $items) {
 					'text' => '@' . $data['name'] 
 				);
 			}
-		} else if (substr($keyword, 0, 1) == '#') {
+		} else if (substr($keyword, 0, 1) == '€') {
 			$keyword = substr($keyword, 1);
 			$list = phonebook_search_group($user_config['uid'], $keyword);
 			foreach ($list as $data) {
