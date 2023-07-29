@@ -921,8 +921,8 @@ switch (_OP_) {
 							'flag_deleted' => '1' 
 						);
 						$conditions = array(
-							////'uid' => $_SESSION['uid'],
-							'parent_uid' => ($user_config["uid"]),
+							'uid' => $_SESSION['uid'],
+							////'parent_uid' => ($user_config["uid"]),
 							'smslog_id' => $itemid,
 						);
 						if ($queue_code = trim($_REQUEST['queue_code'])) {
