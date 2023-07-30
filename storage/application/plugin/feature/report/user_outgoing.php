@@ -22,9 +22,6 @@ if (!auth_isvalid()) {
 	auth_block();
 }
 
-
-
-
 if (auth_issubuser()) {
 
 @set_time_limit(0);
@@ -74,6 +71,8 @@ switch (_OP_) {
 		$extras['LIMIT'] = $nav['limit'];
 		$extras['OFFSET'] = $nav['offset'];
 		$list = dba_search($table, $fields, $conditions, $keywords, $extras, $join);
+
+		if ($_SESSION['val'] < 1) {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // cancellazione automatica degli SMS piu vecchi di 7 giorni se si visualizzano gli SMS APPENA INVIATI
@@ -145,13 +144,14 @@ switch (_OP_) {
 		$extras['LIMIT'] = $nav['limit'];
 		$extras['OFFSET'] = $nav['offset'];
 		$list = dba_search($table, $fields, $conditions, $keywords, $extras, $join);
+	}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // fine ripetizione della prima parte del codice
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		$content = _dialog() . "
-			<h2 class=page-header-title>" . _('My sent messages') . "</h2>
+			<h2 class=page-header-title>" . _('My Group sent messages') . $_SESSION['refresh'] . "</h2>
 			" . $queue_label . "
 			<p>" . $search['form'] . "</p>
 			<form id=fm_user_outgoing name=fm_user_outgoing action=\"index.php?app=main&inc=feature_report&route=user_outgoing&op=actions&queue_code=" . $queue_code . "\" method=POST>
@@ -162,10 +162,19 @@ switch (_OP_) {
 					<a href=\"" . _u('index.php?app=main&inc=feature_report&route=user_outgoing&op=actions&go=export&queue_code=' . $queue_code) . "\">" . $icon_config['export'] . "</a>
 				</div>
 				<div class=pull-left>
+					<td> &emsp;&emsp;&emsp;&emsp; </td>
+				</div>
+				
+				<div class=pull-left>
 					<a href=\"" . _u('index.php?app=main&inc=feature_report&route=user_outgoing&op=actions&go=startstoprefresh&queue_code=' . $queue_code) . "\">" . $icon_config['action'] . "</a>
 				</div>
-
+				
+				<td> <- Set ON/OFF page Autorefresh (10 times, every 30s.) </td>
+				
 				<div class=pull-right>" . _submit(_('Are you sure you want to delete ?'), 'fm_user_outgoing', 'delete') . "</div>
+
+				<div class=pull-right><td> Delete SMS older that 7 days ->&emsp; </td></div>
+
 			</div>
 
 
@@ -177,7 +186,7 @@ switch (_OP_) {
 			<table class=playsms-table-list>
 			<thead>
 			<tr>
-				<th width=15%>" . _('Date/Time') . "</th>
+				<th width=15%>" . _('Date/Time')  . "</th>
 				<th width=10%>" . _('Sender') . "</th>
 				<th width=15%>" . _('To') . "</th>
 				<th width=57%>" . _('Message') . "</th>
@@ -287,13 +296,20 @@ switch (_OP_) {
 		}
 		$_SESSION['val'] ++;
 		if ($_SESSION['val'] <= 10) {
-			if ($inviato == 1) {
-				header('Refresh: 99999999999');
+			if ($_SESSION['val'] > 9){
+				$_SESSION['refresh']=' (autorefresh OFF)';
 			}else{
-				header('Refresh: 30');
+				$_SESSION['refresh']=' (autorefresh ON)';
+			}
+			if ($inviato == 1) {
+				$_SESSION['refresh']=' (autorefresh OFF)';
+				$_SESSION['val']=9;
+			}else{
+				header('Refresh: 1');
 			}
 
 		}else{
+			$_SESSION['refresh']=' (autorefresh OFF)';
 			header('Refresh: 99999999999');
 
 		}
@@ -316,13 +332,16 @@ switch (_OP_) {
 		switch ($go) {
 			case 'autorefresh':
 				$_SESSION['val']=0;
+				$_SESSION['refresh']= ' (autorefresh ON)';
 				$ref = $nav['url'] . '&search_keyword=' . $search['keyword'] . '&page=' . $nav['page'] . '&nav=' . $nav['nav'];
 				header("Location: " . _u($ref));
 				exit();
 			case 'startstoprefresh':
 				if ($_SESSION['val']<10){
+					$_SESSION['refresh']= ' (autorefresh OFF)';
 					$_SESSION['val']=10;
 				}else{
+					$_SESSION['refresh']= ' (autorefresh ON)';
 					$_SESSION['val']=0;
 				}
 				$ref = $nav['url'] . '&search_keyword=' . $search['keyword'] . '&page=' . $nav['page'] . '&nav=' . $nav['nav'];
@@ -480,7 +499,7 @@ switch (_OP_) {
 		$list = dba_search($table, $fields, $conditions, $keywords, $extras, $join);
 		
 		$content = _dialog() . "
-			<h2 class=page-header-title>" . _('My sent messages') . "</h2>
+			<h2 class=page-header-title>" . _('My Sub Users sent messages') . "</h2>
 			" . $queue_label . "
 			<p>" . $search['form'] . "</p>
 			<form id=fm_user_outgoing name=fm_user_outgoing action=\"index.php?app=main&inc=feature_report&route=user_outgoing&op=actions&queue_code=" . $queue_code . "\" method=POST>
@@ -758,7 +777,7 @@ switch (_OP_) {
 		$list = dba_search($table, $fields, $conditions, $keywords, $extras, $join);
 		
 		$content = _dialog() . "
-			<h2 class=page-header-title>" . _('My sent messages') . "</h2>
+			<h2 class=page-header-title>" . _('My Own sent messages') . "</h2>
 			" . $queue_label . "
 			<p>" . $search['form'] . "</p>
 			<form id=fm_user_outgoing name=fm_user_outgoing action=\"index.php?app=main&inc=feature_report&route=user_outgoing&op=actions&queue_code=" . $queue_code . "\" method=POST>
