@@ -161,17 +161,16 @@ switch (_OP_) {
 				<div class=pull-left>
 					<a href=\"" . _u('index.php?app=main&inc=feature_report&route=user_outgoing&op=actions&go=export&queue_code=' . $queue_code) . "\">" . $icon_config['export'] . "</a>
 				</div>
+				<div class=pull-left>
+					<a href=\"" . _u('index.php?app=main&inc=feature_report&route=user_outgoing&op=actions&go=autorefresh&queue_code=' . $queue_code) . "\">" . $icon_config['action'] . "</a>
+				</div>
+
 				<div class=pull-right>" . _submit(_('Are you sure you want to delete ?'), 'fm_user_outgoing', 'delete') . "</div>
 			</div>
 
 
 
-			<input type=hidden name=go value=autorefresh>
-			<div class=playsms-actions-box>
-				<div class=pull-left>" . _submit(_('Enable page Autorefresh, 10 times again ?'), 'fm_user_outgoing', 'autorefresh') . "</div>
-			</div>
-
-
+			
 
 
 			<div class=table-responsive>
@@ -316,7 +315,11 @@ switch (_OP_) {
 		$go = $_REQUEST['go'];
 		switch ($go) {
 			case 'autorefresh':
-				$_SESSION['val'] = 0;
+				if ($_SESSION['val'] < 10) {
+					$_SESSION['val']=10;
+				}else{
+					$_SESSION['val']=0;
+				}
 				$ref = $nav['url'] . '&search_keyword=' . $search['keyword'] . '&page=' . $nav['page'] . '&nav=' . $nav['nav'];
 				header("Location: " . _u($ref));
 				exit();
