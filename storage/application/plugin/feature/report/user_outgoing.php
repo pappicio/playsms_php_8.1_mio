@@ -16,17 +16,12 @@
  * You should have received a copy of the GNU General Public License
  * along with playSMS. If not, see <http://www.gnu.org/licenses/>.
  */
-
- 
-
 defined('_SECURE_') or die('Forbidden');
 
 if (!auth_isvalid()) {
 	auth_block();
 }
 
-
- 
 
 
 
@@ -79,8 +74,6 @@ switch (_OP_) {
 		$extras['LIMIT'] = $nav['limit'];
 		$extras['OFFSET'] = $nav['offset'];
 		$list = dba_search($table, $fields, $conditions, $keywords, $extras, $join);
-
-	if ($_SESSION['val'] < 1 ) {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // cancellazione automatica degli SMS piu vecchi di 7 giorni se si visualizzano gli SMS APPENA INVIATI
@@ -152,8 +145,6 @@ switch (_OP_) {
 		$extras['LIMIT'] = $nav['limit'];
 		$extras['OFFSET'] = $nav['offset'];
 		$list = dba_search($table, $fields, $conditions, $keywords, $extras, $join);
-	
-	}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // fine ripetizione della prima parte del codice
@@ -171,14 +162,18 @@ switch (_OP_) {
 					<a href=\"" . _u('index.php?app=main&inc=feature_report&route=user_outgoing&op=actions&go=export&queue_code=' . $queue_code) . "\">" . $icon_config['export'] . "</a>
 				</div>
 				<div class=pull-right>" . _submit(_('Are you sure you want to delete ?'), 'fm_user_outgoing', 'delete') . "</div>
-				
-				<input type=hidden name=go value=autorefresh>
-				<div class=playsms-actions-box>
-					<div class=pull-left>" . _submit(_('Enable page Autorefresh, 10 times again ?'), 'fm_user_outgoing', 'autorefresh') . "</div>
-				</div>
 			</div>
 
-			
+
+
+			<input type=hidden name=go value=autorefresh>
+			<div class=playsms-actions-box>
+				<div class=pull-left>" . _submit(_('Enable page Autorefresh, 10 times again ?'), 'fm_user_outgoing', 'autorefresh') . "</div>
+			</div>
+
+
+
+
 			<div class=table-responsive>
 			<table class=playsms-table-list>
 			<thead>
@@ -296,7 +291,7 @@ switch (_OP_) {
 			if ($inviato == 1) {
 				header('Refresh: 99999999999');
 			}else{
-				header('Refresh: 10');
+				header('Refresh: 1');
 			}
 
 		}else{
@@ -705,7 +700,7 @@ switch (_OP_) {
 
 
 if (auth_isadmin()) {
-
+ 
 @set_time_limit(0);
 
 switch (_OP_) {
