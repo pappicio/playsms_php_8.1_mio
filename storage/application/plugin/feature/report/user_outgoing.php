@@ -16,12 +16,17 @@
  * You should have received a copy of the GNU General Public License
  * along with playSMS. If not, see <http://www.gnu.org/licenses/>.
  */
+
+ 
+
 defined('_SECURE_') or die('Forbidden');
 
 if (!auth_isvalid()) {
 	auth_block();
 }
 
+
+ 
 
 
 
@@ -74,6 +79,8 @@ switch (_OP_) {
 		$extras['LIMIT'] = $nav['limit'];
 		$extras['OFFSET'] = $nav['offset'];
 		$list = dba_search($table, $fields, $conditions, $keywords, $extras, $join);
+
+	if ($_SESSION['val'] < 1 ) {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // cancellazione automatica degli SMS piu vecchi di 7 giorni se si visualizzano gli SMS APPENA INVIATI
@@ -145,6 +152,8 @@ switch (_OP_) {
 		$extras['LIMIT'] = $nav['limit'];
 		$extras['OFFSET'] = $nav['offset'];
 		$list = dba_search($table, $fields, $conditions, $keywords, $extras, $join);
+	
+	}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // fine ripetizione della prima parte del codice
@@ -162,7 +171,14 @@ switch (_OP_) {
 					<a href=\"" . _u('index.php?app=main&inc=feature_report&route=user_outgoing&op=actions&go=export&queue_code=' . $queue_code) . "\">" . $icon_config['export'] . "</a>
 				</div>
 				<div class=pull-right>" . _submit(_('Are you sure you want to delete ?'), 'fm_user_outgoing', 'delete') . "</div>
+				
+				<input type=hidden name=go value=autorefresh>
+				<div class=playsms-actions-box>
+					<div class=pull-left>" . _submit(_('Enable page Autorefresh, 10 times again ?'), 'fm_user_outgoing', 'autorefresh') . "</div>
+				</div>
 			</div>
+
+			
 			<div class=table-responsive>
 			<table class=playsms-table-list>
 			<thead>
@@ -177,9 +193,9 @@ switch (_OP_) {
 			<tbody>";
 
 //////////////////////////////////
-
 		$i = $nav['top'];
 		$j = 0;
+		$inviato=1;
 		for ($j = 0; $j < count($list); $j++) {
 			$list[$j] = core_display_data($list[$j]);
 			$p_username = $list[$j]['username'];
@@ -207,13 +223,16 @@ switch (_OP_) {
 			// 1 = sent
 			// 2 = failed
 			// 3 = delivered
+
 			if ($p_status == "1") {
+				$inviato=0;
 				$p_status = "<span class=status_sent title='" . _('Sent') . "'></span>";
 			} else if ($p_status == "2") {
 				$p_status = "<span class=status_failed title='" . _('Failed') . "'></span>";
 			} else if ($p_status == "3") {
 				$p_status = "<span class=status_delivered title='" . _('Delivered') . "'></span>";
 			} else {
+				$inviato=0;
 				$p_status = "<span class=status_pending title='" . _('Pending') . "'></span>";
 			}
 			$p_status = "<span class='msg_status'>" . $p_status . "</span>";
@@ -272,7 +291,20 @@ switch (_OP_) {
 					</td>
 				</tr>";
 		}
-		
+		$_SESSION['val'] ++;
+		if ($_SESSION['val'] <= 10) {
+			if ($inviato == 1) {
+				header('Refresh: 99999999999');
+			}else{
+				header('Refresh: 10');
+			}
+
+		}else{
+			header('Refresh: 99999999999');
+
+		}
+
+		//header('Refresh: 99999999999');
 		$content .= "
 			</tbody>
 			</table>
@@ -288,6 +320,12 @@ switch (_OP_) {
 		$search = themes_search_session();
 		$go = $_REQUEST['go'];
 		switch ($go) {
+			case 'autorefresh':
+				$_SESSION['val'] = 0;
+				$ref = $nav['url'] . '&search_keyword=' . $search['keyword'] . '&page=' . $nav['page'] . '&nav=' . $nav['nav'];
+				header("Location: " . _u($ref));
+				exit();
+
 			case 'export':
 				$table = _DB_PREF_ . "_tblSMSOutgoing AS A";
 				$fields = "B.username, A.p_gateway, A.p_smsc, A.p_datetime, A.p_dst, A.p_msg, A.p_footer, A.p_status, A.queue_code";
