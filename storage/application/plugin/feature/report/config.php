@@ -93,7 +93,7 @@ $menu_config[$menutab][] = array(
 
 if (auth_issubuser()) {
 $menu_config[$menutab][] = array(
-	'index.php?app=main&inc=feature_report&route=user_outgoing&op=actions&go=autorefresh&queue_code=' . $queue_code,
+	'index.php?app=main&inc=feature_report&route=user_outgoing&op=user_refresh',
 	_('My Group sent messages'),
 	1
 );

@@ -19,7 +19,7 @@
 defined('_SECURE_') or die('Forbidden');
 
 if (!auth_isvalid()) {
-	auth_block();
+	//auth_block();
 }
 
 if (auth_issubuser()) {
@@ -27,6 +27,14 @@ if (auth_issubuser()) {
 @set_time_limit(0);
 
 switch (_OP_) {
+	case "user_refresh":
+		$_SESSION['val']=0;
+		$_SESSION['refresh'] = ' (autorefresh ON)';
+		$ref = $nav['url'] . 'index.php?app=main&inc=feature_report&route=user_outgoing&op=user_outgoing';
+		header("Location: " . _u($ref));
+		exit();
+	break;
+
 	case "user_outgoing":
 		$search_category = array(
 			_('Gateway') => 'p_gateway',
@@ -183,7 +191,11 @@ switch (_OP_) {
 
 
 			<div class=table-responsive>
+
+			 <!-- 
 			<table class=playsms-table-list>
+			 -->
+			<table class=playsms-table cellpadding=1 cellspacing=2 border=2>
 			<thead>
 			<tr>
 				<th width=15%>" . _('Date/Time')  . "</th>
