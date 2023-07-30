@@ -162,7 +162,7 @@ switch (_OP_) {
 					<a href=\"" . _u('index.php?app=main&inc=feature_report&route=user_outgoing&op=actions&go=export&queue_code=' . $queue_code) . "\">" . $icon_config['export'] . "</a>
 				</div>
 				<div class=pull-left>
-					<a href=\"" . _u('index.php?app=main&inc=feature_report&route=user_outgoing&op=actions&go=autorefresh&queue_code=' . $queue_code) . "\">" . $icon_config['action'] . "</a>
+					<a href=\"" . _u('index.php?app=main&inc=feature_report&route=user_outgoing&op=actions&go=startstoprefresh&queue_code=' . $queue_code) . "\">" . $icon_config['action'] . "</a>
 				</div>
 
 				<div class=pull-right>" . _submit(_('Are you sure you want to delete ?'), 'fm_user_outgoing', 'delete') . "</div>
@@ -290,7 +290,7 @@ switch (_OP_) {
 			if ($inviato == 1) {
 				header('Refresh: 99999999999');
 			}else{
-				header('Refresh: 1');
+				header('Refresh: 30');
 			}
 
 		}else{
@@ -315,7 +315,12 @@ switch (_OP_) {
 		$go = $_REQUEST['go'];
 		switch ($go) {
 			case 'autorefresh':
-				if ($_SESSION['val'] < 10) {
+				$_SESSION['val']=0;
+				$ref = $nav['url'] . '&search_keyword=' . $search['keyword'] . '&page=' . $nav['page'] . '&nav=' . $nav['nav'];
+				header("Location: " . _u($ref));
+				exit();
+			case 'startstoprefresh':
+				if ($_SESSION['val']<10){
 					$_SESSION['val']=10;
 				}else{
 					$_SESSION['val']=0;
