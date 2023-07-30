@@ -19,7 +19,7 @@
 defined('_SECURE_') or die('Forbidden');
 
 if (!auth_isvalid()) {
-	//auth_block();
+	auth_block();
 }
 
 if (auth_issubuser()) {
