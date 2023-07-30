@@ -305,7 +305,8 @@ switch (_OP_) {
 				$_SESSION['refresh']=' (autorefresh OFF)';
 				$_SESSION['val']=9;
 			}else{
-				header('Refresh: 1');
+				//////refresh time in secondi
+				header('Refresh: 30'); 
 			}
 
 		}else{
