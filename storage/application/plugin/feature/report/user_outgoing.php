@@ -207,7 +207,10 @@ switch (_OP_) {
 				<th width=10%>" . _('Sender') . "</th>
 				<th width=15%>" . _('To') . "</th>
 				<th width=57%>" . _('Message') . "</th>
-				<th width=3% class=\"sorttable_nosort\" nowrap><input type=checkbox onclick=CheckUncheckAll(document.fm_user_outgoing)></th>
+	<!-- 001 //////////////////////////////////////////// eliminaimo il checkbox elimina sms!!!-->
+				<!--
+					<th width=3% class=\"sorttable_nosort\" nowrap><input type=checkbox onclick=CheckUncheckAll(document.fm_user_outgoing)></th> 
+				-->
 			</tr>
 			</thead>
 			<tbody>";
@@ -269,9 +272,11 @@ switch (_OP_) {
 			$p_charge = "<span class='msg_charge'><span class='playsms-icon fas fa-file-invoice-dollar' title='" . _('Charge') . "'></span>" . $p_charge . "</span>";
 
 			// if send SMS failed then display charge as 0
-			if ($list[$j]['p_status'] == 2) {
-				$p_charge = '0.00';
-			}
+			//if ($list[$j]['p_status'] == 2) {
+			//	$p_charge = '0.00';
+			//}
+			$p_charge = '';
+			$p_rate ='';
 
 /////////////////////////////////////////////////////////////////////////   R E S E N D   /////////////////////////////////////////////////////////////////////////
 
@@ -283,7 +288,9 @@ switch (_OP_) {
 			}
 			$c_message = "
 				<div class=\"row\">
-					<div class=\"col-sm\">
+	<!-- fix 001 //////////////////////////////////////////// allunghiamo width per testo SMS !!!-->
+					<!-- <div class=\"col-sm\"> -->
+					<div class=\"col-sm-9\">
 						<div id=\"user_outgoing_msg\">
 							<div class='msg_text'>" . $p_msg . "</div>
 						</div>
@@ -305,10 +312,14 @@ switch (_OP_) {
 					<td>$p_footer</td>
 					<td><div>" . $current_p_dst . "</div><div>" . $queue_view_link . "</div></td>
 					<td>$c_message</td>
+
+	<!-- 001  //////////////////////////////////////////// eliminaimo il checkbox elimina sms!!!-->
+					<!--
 					<td nowrap>
 						<input type=hidden name=itemid" . $j . " value=\"$smslog_id\">
 						<input type=checkbox name=checkid" . $j . ">
 					</td>
+					-->
 				</tr>";
 		}
 
