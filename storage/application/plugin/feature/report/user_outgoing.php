@@ -633,7 +633,8 @@ switch (_OP_) {
 			if ($list[$j]['p_status'] == 2) {
 				$p_charge = '0.00';
 			}
-
+			$p_charge = '';
+			$p_rate = '';
 /////////////////////////////resend........
 			$msg = $list[$j]['p_msg'];
 			$p_msg = core_display_text($msg);
@@ -643,7 +644,8 @@ switch (_OP_) {
 			}
 			$c_message = "
 				<div class=\"row\">
-					<div class=\"col-sm\">
+	<!-- fix 001 //////////////////////////////////////////// allunghiamo width per testo SMS !!!-->
+					<div class=\"col-sm-8\">
 						<div id=\"user_outgoing_msg\">
 							<div class='msg_text'>" . $p_msg . "</div>
 						</div>
@@ -911,7 +913,8 @@ switch (_OP_) {
 			if ($list[$j]['p_status'] == 2) {
 				$p_charge = '0.00';
 			}
-
+			$p_charge='';
+			$p_rate='';
 /////////////////////////////resend........
 			$msg = $list[$j]['p_msg'];
 			$p_msg = core_display_text($msg);
@@ -921,7 +924,8 @@ switch (_OP_) {
 			}
 			$c_message = "
 				<div class=\"row\">
-					<div class=\"col-sm\">
+	<!-- fix 001 //////////////////////////////////////////// allunghiamo width per testo SMS !!!-->
+					<div class=\"col-sm-8\">
 						<div id=\"user_outgoing_msg\">
 							<div class='msg_text'>" . $p_msg . "</div>
 						</div>
