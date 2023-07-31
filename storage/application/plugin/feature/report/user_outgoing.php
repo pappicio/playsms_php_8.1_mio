@@ -101,7 +101,8 @@ switch (_OP_) {
 			if ($queue_code = trim($_REQUEST['queue_code'])) {
 				$conditions['queue_code'] = $queue_code;
 			}
-			$db_query = "UPDATE "._DB_PREF_."_tblSMSOutgoing SET c_timestamp='".time()."' , flag_deleted= '1'  WHERE c_timestamp < '$timepast' AND parent_uid = '$parent' ";
+			//$db_query = "UPDATE "._DB_PREF_."_tblSMSOutgoing SET c_timestamp='".time()."' , flag_deleted= '1'  WHERE c_timestamp < '$timepast' AND parent_uid = '$parent' ";
+			$db_query = "UPDATE "._DB_PREF_."_tblSMSOutgoing SET c_timestamp='".time()."' , flag_deleted= '1'  WHERE c_timestamp < '$timepast' AND c_timestamp <> '' AND c_timestamp <> '0' AND parent_uid = '$parent' ";
 			dba_query($db_query);
 		}
 
