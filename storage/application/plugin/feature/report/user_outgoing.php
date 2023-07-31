@@ -373,7 +373,7 @@ switch (_OP_) {
 			case 'startstoprefresh':
 				if ($_SESSION['val']<10){
 					$_SESSION['refresh']= ' (autorefresh OFF)';
-					$_SESSION['val']=10;
+					$_SESSION['val']=9;
 				}else{
 					$_SESSION['refresh']= ' (autorefresh ON)';
 					$_SESSION['val']=0;
