@@ -80,7 +80,11 @@ switch (_OP_) {
 		$extras['OFFSET'] = $nav['offset'];
 		$list = dba_search($table, $fields, $conditions, $keywords, $extras, $join);
 
-	if ($_SESSION['val'] < 1) {
+///cosi solo il primo utente al primo collegamento puo eliminare i vecchi files e nn ogni volta che va.....
+	////if ($_SESSION['val'] < 1) {
+	if (!isset($_SESSION['deleteoldsms']))
+	{
+  		$_SESSION['deleteoldsms'] = 1;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // cancellazione automatica degli SMS piu vecchi di 7 giorni se si visualizzano gli SMS APPENA INVIATI
@@ -334,7 +338,6 @@ switch (_OP_) {
 				$_SESSION['refresh']=' (autorefresh OFF)';
 				$_SESSION['val']=10;
 			}
-		
 		if ($_SESSION['val'] < 10) {
 			$_SESSION['refresh']=' (autorefresh ON)';
 			header('Refresh: 15');
