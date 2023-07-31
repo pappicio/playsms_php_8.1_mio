@@ -307,28 +307,48 @@ switch (_OP_) {
 					</td>
 				</tr>";
 		}
-		$_SESSION['val'] ++;
-		if ($_SESSION['val'] <= 10) {
-			if ($_SESSION['val'] > 9){
-				$_SESSION['refresh']=' (autorefresh OFF)';
-			}else{
-				$_SESSION['refresh']=' (autorefresh ON)';
-			}
-			if ($inviato == 1) {
-				$_SESSION['refresh']=' (autorefresh OFF)';
-				$_SESSION['val']=9;
-			}else{
-				//////refresh time in secondi
-				header('Refresh: 30'); 
-			}
 
-		}else{
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		//$_SESSION['val'] ++;
+		//if ($_SESSION['val'] <= 10) {
+		//	if ($_SESSION['val'] > 9){
+		//		$_SESSION['refresh']=' (autorefresh OFF)';
+		//	}else{
+		//		$_SESSION['refresh']=' (autorefresh ON)';
+		//	}
+		//	if ($inviato == 1) {
+		//		$_SESSION['refresh']=' (autorefresh OFF)';
+		//		$_SESSION['val']=9;
+		//	}else{
+		//		//////refresh time in secondi
+		//		header('Refresh: 30'); 
+		//	}
+		//}else{
+		//	$_SESSION['refresh']=' (autorefresh OFF)';
+		//	header('Refresh: 99999999999');
+		//}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		$_SESSION['val'] ++;
+			if (($inviato == 1) AND ($_SESSION['val'] < 10)) {
+				$_SESSION['refresh']=' (autorefresh OFF)';
+				$_SESSION['val']=10;
+			}
+		
+		if ($_SESSION['val'] < 10) {
+			$_SESSION['refresh']=' (autorefresh ON)';
+			header('Refresh: 15');
+		}elseif ($_SESSION['val'] == 10){
+			$_SESSION['val']=11;
 			$_SESSION['refresh']=' (autorefresh OFF)';
 			header('Refresh: 99999999999');
-
+			$ref = $nav['url'] . 'index.php?app=main&inc=feature_report&route=user_outgoing&op=user_outgoing';
+			header("Location: " . _u($ref));
+		}elseif ($_SESSION['val'] > 15){
+			$_SESSION['val']=15;
 		}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-		//header('Refresh: 99999999999');
 		$content .= "
 			</tbody>
 			</table>
