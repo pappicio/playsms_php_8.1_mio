@@ -86,7 +86,7 @@ $menu_config[$menutab][] = array(
 if (auth_isuser()) {
 $menu_config[$menutab][] = array(
 	'index.php?app=main&inc=feature_report&route=user_outgoing&op=user_outgoing',
-	_('Subusers sent messages'),
+	_('My Sub Users sent messages'),
 	1
 );
 }

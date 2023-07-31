@@ -182,11 +182,11 @@ switch (_OP_) {
 					<a href=\"" . _u('index.php?app=main&inc=feature_report&route=user_outgoing&op=actions&go=startstoprefresh&queue_code=' . $queue_code) . "\">" . $icon_config['action'] . "</a>
 				</div>
 				
-				<td> <- Set ON/OFF page Autorefresh (10 times, every 15s.) </td>
+				<td> <- Set ON/OFF page Autorefresh (10 times, every 15s and only if SMS iet in pending) </td>
 				
 				<div class=pull-right>" . _submit(_('Are you sure you want to delete ?'), 'fm_user_outgoing', 'delete') . "</div>
 
-				<div class=pull-right><td> Delete SMS older that 7 days ->&emsp; </td></div>
+				<div class=pull-right><td> Delete SMS older than 7 days ->&emsp; </td></div>
 
 			</div>
 
@@ -368,12 +368,17 @@ switch (_OP_) {
 		$go = $_REQUEST['go'];
 		switch ($go) {
 			case 'autorefresh':
-				$_SESSION['val']=0;
-				$_SESSION['refresh']= ' (autorefresh ON)';
-				$ref = $nav['url'] . '&search_keyword=' . $search['keyword'] . '&page=' . $nav['page'] . '&nav=' . $nav['nav'];
-				header("Location: " . _u($ref));
-				exit();
-			case 'startstoprefresh':
+				if ($inviato == 1) {
+					break;
+				}else{
+					$_SESSION['val']=0;
+					$_SESSION['refresh']= ' (autorefresh ON)';
+					$ref = $nav['url'] . '&search_keyword=' . $search['keyword'] . '&page=' . $nav['page'] . '&nav=' . $nav['nav'];
+					header("Location: " . _u($ref));
+					break;
+
+				}
+				case 'startstoprefresh':
 				if ($_SESSION['val']<10){
 					$_SESSION['refresh']= ' (autorefresh OFF)';
 					$_SESSION['val']=9;
