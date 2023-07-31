@@ -80,7 +80,7 @@ switch (_OP_) {
 		$extras['OFFSET'] = $nav['offset'];
 		$list = dba_search($table, $fields, $conditions, $keywords, $extras, $join);
 
-		if ($_SESSION['val'] < 1) {
+	if ($_SESSION['val'] < 1) {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // cancellazione automatica degli SMS piu vecchi di 7 giorni se si visualizzano gli SMS APPENA INVIATI
@@ -339,7 +339,7 @@ switch (_OP_) {
 			$_SESSION['refresh']=' (autorefresh ON)';
 			header('Refresh: 15');
 		}elseif ($_SESSION['val'] == 10){
-			$_SESSION['val']=11;
+			$_SESSION['val']=12;
 			$_SESSION['refresh']=' (autorefresh OFF)';
 			header('Refresh: 99999999999');
 			$ref = $nav['url'] . 'index.php?app=main&inc=feature_report&route=user_outgoing&op=user_outgoing';
