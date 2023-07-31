@@ -182,7 +182,7 @@ switch (_OP_) {
 					<a href=\"" . _u('index.php?app=main&inc=feature_report&route=user_outgoing&op=actions&go=startstoprefresh&queue_code=' . $queue_code) . "\">" . $icon_config['action'] . "</a>
 				</div>
 				
-				<td> <- Set ON/OFF page Autorefresh (10 times, every 30s.) </td>
+				<td> <- Set ON/OFF page Autorefresh (10 times, every 15s.) </td>
 				
 				<div class=pull-right>" . _submit(_('Are you sure you want to delete ?'), 'fm_user_outgoing', 'delete') . "</div>
 
