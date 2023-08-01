@@ -1,5 +1,17 @@
 {{ DIALOG_DISPLAY }}
 
+
+<!-- 
+
+per abilitare la textbox grande bisogna cambare anche il file: 
+
+/web/plugin/themes/common/jscss/common.css... gia adattato
+
+nel girhub!!!
+
+-->
+
+
 <form name="{{ SENDSMS_FORM_ID }}" id="{{ SENDSMS_FORM_ID }}" action="index.php?app=main&inc=core_sendsms&op=sendsms_yes" method="POST" role="form">
 	{{ CSRF_FORM }} 
 	<input type="hidden" value="{{ sms_footer_length }}" name="footerlen">
