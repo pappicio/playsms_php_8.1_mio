@@ -76,11 +76,10 @@ switch (_OP_) {
 			<form id=fm_all_outgoing name=fm_all_outgoing action=\"index.php?app=main&inc=feature_report&route=all_outgoing&op=actions&queue_code=" . $queue_code . "\" method=POST>
 			" . _CSRF_FORM_ . "
 			<input type=hidden name=go value=delete>
-			<div class=playsms-actions-box>
+      			<div class=playsms-actions-box>
 				<div class=pull-left>
 					<a href=\"" . _u('index.php?app=main&inc=feature_report&route=all_outgoing&op=actions&go=export&queue_code=' . $queue_code) . "\">" . $icon_config['export'] . "</a>
 				</div>
-				<div class=pull-right>" . _submit(_('Are you sure you want to delete ?'), 'fm_all_outgoing', 'delete') . "</div>
 			</div>
 			<div class=table-responsive>
 			<table class=playsms-table-list>
@@ -90,7 +89,7 @@ switch (_OP_) {
 				<th width=15%>" . _('Date/Time') . "</th>
 				<th width=15%>" . _('To') . "</th>
 				<th width=57%>" . _('Message') . "</th>
-				<th width=3% class=\"sorttable_nosort\" nowrap><input type=checkbox onclick=CheckUncheckAll(document.fm_all_outgoing)></th>
+				<!-- <th width=3% class=\"sorttable_nosort\" nowrap><input type=checkbox onclick=CheckUncheckAll(document.fm_all_outgoing)></th> -->
 			</tr>
 			</thead>
 			<tbody>";
@@ -151,16 +150,18 @@ switch (_OP_) {
 			if ($list[$j]['p_status'] == 2) {
 				$p_charge = '0.00';
 			}
+			$p_charge='';
+			$p_rate='';
 
 			$msg = $list[$j]['p_msg'];
 			$p_msg = core_display_text($msg);
 			if ($msg && $p_dst) {
-				$resend = _sendsms($p_dst, $msg, $icon_config['resend']);
-				$forward = _sendsms('', $msg, $icon_config['forward']);
+				$resend = ''; /// _sendsms($p_dst, $msg, $icon_config['resend']);
+				$forward = ''; /// _sendsms('', $msg, $icon_config['forward']);
 			}
 			$c_message = "
 				<div class=\"row\">
-					<div class=\"col-sm\">
+					<div class=\"col-sm-8\">
 						<div id=\"user_outgoing_msg\">
 							<div class='msg_text'>" . $p_msg . "</div>
 						</div>
@@ -183,7 +184,7 @@ switch (_OP_) {
 					<td>$c_message</td>
 					<td nowrap>
 						<input type=hidden name=itemid" . $j . " value=\"$smslog_id\">
-						<input type=checkbox name=checkid" . $j . ">
+						<!-- <input type=checkbox name=checkid" . $j . "> -->
 					</td>
 				</tr>";
 		}

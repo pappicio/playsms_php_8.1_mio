@@ -572,7 +572,7 @@ switch (_OP_) {
 				<th width=10%>" . _('Sender') . "</th>
 				<th width=15%>" . _('To') . "</th>
 				<th width=57%>" . _('Message') . "</th>
-				<th width=3% class=\"sorttable_nosort\" nowrap><input type=checkbox onclick=CheckUncheckAll(document.fm_user_outgoing)></th>
+				<!-- <th width=3% class=\"sorttable_nosort\" nowrap><input type=checkbox onclick=CheckUncheckAll(document.fm_user_outgoing)></th> -->
 			</tr>
 			</thead>
 			<tbody>";
@@ -639,9 +639,8 @@ switch (_OP_) {
 			$msg = $list[$j]['p_msg'];
 			$p_msg = core_display_text($msg);
 			if ($msg && $p_dst) {
-				$resend = _sendsms($p_dst, $msg, $icon_config['resend']);
-				$forward = _sendsms('', $msg, $icon_config['forward']);
-			}
+				$resend = ''; 
+				$forward = ''; 			}
 			$c_message = "
 				<div class=\"row\">
 	<!-- fix 001 //////////////////////////////////////////// allunghiamo width per testo SMS !!!-->
@@ -669,7 +668,7 @@ switch (_OP_) {
 					<td>$c_message</td>
 					<td nowrap>
 						<input type=hidden name=itemid" . $j . " value=\"$smslog_id\">
-						<input type=checkbox name=checkid" . $j . ">
+						<input type=checkbox name=checkid" . $j . "> 
 					</td>
 				</tr>";
 		}
