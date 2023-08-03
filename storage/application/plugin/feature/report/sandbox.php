@@ -87,10 +87,10 @@ switch (_OP_) {
 			$in_message = core_display_text($msg);
 			$reply = '';
 			$forward = '';
-			if ($msg && $in_sender) {
-				$reply = _sendsms($in_sender, $msg);
-				$forward = _sendsms('', $msg, $icon_config['forward']);
-			}
+			//if ($msg && $in_sender) {
+			//	$reply = _sendsms($in_sender, $msg);
+			//	$forward = _sendsms('', $msg, $icon_config['forward']);
+			//}
 			$c_message = "<div id=\"sandbox_msg\">" . $in_message . "</div><div id=\"msg_option\">" . $reply . $forward . "</div>";
 			$i--;
 			$content .= "
