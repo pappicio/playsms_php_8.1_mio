@@ -21,7 +21,7 @@ defined('_SECURE_') or die('Forbidden');
 if (!auth_isvalid()) {
 	auth_block();
 }
-if (!auth_issubuser()) {
+if (auth_issubuser()) {
 
 switch (_OP_) {
 	case "user_inbox":
