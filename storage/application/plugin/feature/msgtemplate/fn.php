@@ -22,7 +22,14 @@ function msgtemplate_hook_sendsms_intercept($sms_sender, $sms_footer, $sms_to, $
 
 function msgtemplate_hook_sendsms_get_template() {
 	$ret = array();
-	$db_query = "SELECT * FROM " . _DB_PREF_ . "_featureMsgtemplate WHERE uid='" . $_SESSION['uid'] . "' ORDER BY t_title ASC";
+	if (auth_issubuser()) {
+		$parent_uid = user_getparentbyuid($_SESSION['uid'] );
+	}else{
+		$parent_uid = ($_SESSION['uid'] );
+	}
+		//$db_query = "SELECT * FROM " . _DB_PREF_ . "_featureMsgtemplate WHERE uid='" . $_SESSION['uid'] . "' ORDER BY t_title ASC";
+	$db_query = "SELECT * FROM " . _DB_PREF_ . "_featureMsgtemplate WHERE uid='" . $parent_uid . "' ORDER BY t_title ASC";
+
 	$db_result = dba_query($db_query);
 	$i = 0;
 	while ($db_row = dba_fetch_array($db_result)) {
