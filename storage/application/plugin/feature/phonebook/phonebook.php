@@ -117,6 +117,9 @@ switch (_OP_) {
 		for ($j = 0; $j < count($list); $j++) {
 			$pid = $list[$j]['pid'];
 			$name = $list[$j]['name'];
+			if (substr ($name,0,7) == 'f_a_k_e') {
+				continue;
+			}
 			$mobile = $list[$j]['mobile'];
 			$email = $list[$j]['email'];
 			$tags = $list[$j]['tags'];
@@ -879,6 +882,9 @@ switch (_OP_) {
 		for ($j = 0; $j < count($list); $j++) {
 			$pid = $list[$j]['pid'];
 			$name = $list[$j]['name'];
+			if (substr ($name,0,7) == 'f_a_k_e') {
+				continue;
+			}
 			$mobile = $list[$j]['mobile'];
 			$email = $list[$j]['email'];
 			$tags = $list[$j]['tags'];
