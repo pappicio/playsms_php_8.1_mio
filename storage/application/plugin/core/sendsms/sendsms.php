@@ -211,7 +211,7 @@ switch (_OP_) {
  
 		 
 				  
-				echo 'La funzione "Invio SMS" è disponibile solo per utenze di tipo: SUBUSERS!!!' ;
+				echo '"Compose messsage" is enabled only for users belonging to the type: SUBUSERS!!!' ;
 					 
  
 		 
