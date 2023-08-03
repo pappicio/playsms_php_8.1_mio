@@ -22,6 +22,9 @@ if (!auth_isvalid()) {
 	auth_block();
 }
 
+
+if (auth_issubuser()) {
+
 switch (_OP_) {
 	case "sendsms":
 		
@@ -201,4 +204,16 @@ switch (_OP_) {
 		}
 		exit();
 		break;
+}
+
+}else{
+
+ 
+		 
+				  
+				echo 'La funzione "Invio SMS" è disponibile solo per utenze di tipo: SUBUSERS!!!' ;
+					 
+ 
+		 
+
 }
