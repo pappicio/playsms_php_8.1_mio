@@ -98,7 +98,7 @@ switch (_OP_) {
 				'HTTP_PATH_BASE' => _HTTP_PATH_BASE_,
 				'HTTP_PATH_THEMES' => _HTTP_PATH_THEMES_,
 				'THEMES_MODULE' => core_themes_get(),
-				'HINT_SEND_TO' => _('type almost 2 chars to have tthe corresponding contacts list'),
+				'HINT_SEND_TO' => _('digita almeno 2 caratteri per avere la lista dei contatti corrispondente'),
 				'HINT_SCHEDULE' => _('Format YYYY-MM-DD hh:mm'),
 				'HINT_UNICODE_MESSAGE' => _hint(_('Unicode message detected automatically')),
 				'sms_from' => $sms_from,
