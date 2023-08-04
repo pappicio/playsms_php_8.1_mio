@@ -29,6 +29,7 @@ if (auth_issubuser()) {
 switch (_OP_) {
 	case "user_refresh":
 		$_SESSION['val']=0;
+		$_SESSION['link']='';
 		$_SESSION['refresh'] = ' (autorefresh ON)';
 		$ref = $nav['url'] . 'index.php?app=main&inc=feature_report&route=user_outgoing&op=user_outgoing';
 		header("Location: " . _u($ref));
@@ -356,7 +357,11 @@ switch (_OP_) {
 			$_SESSION['val']=12;
 			$_SESSION['refresh']=' (autorefresh OFF)';
 			header('Refresh: 99999999999');
-			$ref = $nav['url'] . 'index.php?app=main&inc=feature_report&route=user_outgoing&op=user_outgoing';
+			$ref = $nav['url'] ; 
+			//if ( $_SESSION['link'] <> '') {
+			//	$ref=($_SESSION['link'];
+			//}
+
 			header("Location: " . _u($ref));
 		}elseif ($_SESSION['val'] > 15){
 			$_SESSION['val']=15;
@@ -397,7 +402,7 @@ switch (_OP_) {
 					$_SESSION['refresh']= ' (autorefresh ON)';
 					$_SESSION['val']=0;
 				}
-				$ref = $nav['url'] . '&search_keyword=' . $search['keyword'] . '&page=' . $nav['page'] . '&nav=' . $nav['nav'];
+				$ref = $nav['url'] ; 
 				header("Location: " . _u($ref));
 				exit();
 
@@ -601,6 +606,7 @@ switch (_OP_) {
 			$queue_view_link = "";
 			if ($c_queue_count > 1) {
 				$queue_view_link = "<a href='" . $base_url . "&queue_code=" . $c_queue_code . "'>" . sprintf(_('view all %d'), $c_queue_count) . "</a>";
+				
 			}
 			
 			// 0 = pending
