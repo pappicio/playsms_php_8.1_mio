@@ -78,7 +78,7 @@ $menu_config[$menutab][] = array(
 if (auth_isadmin()) {
 $menu_config[$menutab][] = array(
 	'index.php?app=main&inc=feature_report&route=user_outgoing&op=user_outgoing',
-	_('My Own sent messages'),
+	_('I miei SMS inviati'),
 	1
 );
 }
@@ -86,7 +86,7 @@ $menu_config[$menutab][] = array(
 if (auth_isuser()) {
 $menu_config[$menutab][] = array(
 	'index.php?app=main&inc=feature_report&route=user_outgoing&op=user_outgoing',
-	_('My Sub Users sent messages'),
+	_('SMS inviati dai Sub Users'),
 	1
 );
 }
@@ -94,7 +94,7 @@ $menu_config[$menutab][] = array(
 if (auth_issubuser()) {
 $menu_config[$menutab][] = array(
 	'index.php?app=main&inc=feature_report&route=user_outgoing&op=user_refresh',
-	_('My Group sent messages'),
+	_('SMS inviati dal mio Gruppo'),
 	1
 );
 //$_SESSION['val'] = 0;

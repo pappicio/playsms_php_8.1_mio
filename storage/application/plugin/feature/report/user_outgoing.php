@@ -165,7 +165,7 @@ switch (_OP_) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		$content = _dialog() . "
-			<h2 class=page-header-title>" . _('My Group sent messages') . $_SESSION['refresh'] . "</h2>
+			<h2 class=page-header-title>" . _('SMS Inviati dal mio Gruppo') . $_SESSION['refresh'] . "</h2>
 			" . $queue_label . "
 			<p>" . $search['form'] . "</p>
 			<form id=fm_user_outgoing name=fm_user_outgoing action=\"index.php?app=main&inc=feature_report&route=user_outgoing&op=actions&queue_code=" . $queue_code . "\" method=POST>
@@ -557,7 +557,7 @@ switch (_OP_) {
 		$list = dba_search($table, $fields, $conditions, $keywords, $extras, $join);
 		
 		$content = _dialog() . "
-			<h2 class=page-header-title>" . _('My Sub Users sent messages') . "</h2>
+			<h2 class=page-header-title>" . _('SMS inviati dai Sub Users') . "</h2>
 			" . $queue_label . "
 			<p>" . $search['form'] . "</p>
 			<form id=fm_user_outgoing name=fm_user_outgoing action=\"index.php?app=main&inc=feature_report&route=user_outgoing&op=actions&queue_code=" . $queue_code . "\" method=POST>
@@ -837,7 +837,7 @@ switch (_OP_) {
 		$list = dba_search($table, $fields, $conditions, $keywords, $extras, $join);
 		
 		$content = _dialog() . "
-			<h2 class=page-header-title>" . _('My Own sent messages') . "</h2>
+			<h2 class=page-header-title>" . _('I meie SMS inviati') . "</h2>
 			" . $queue_label . "
 			<p>" . $search['form'] . "</p>
 			<form id=fm_user_outgoing name=fm_user_outgoing action=\"index.php?app=main&inc=feature_report&route=user_outgoing&op=actions&queue_code=" . $queue_code . "\" method=POST>
