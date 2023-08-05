@@ -532,7 +532,7 @@ msgid "Choice has been added"
 msgstr "La scelta è stata aggiunta"
 
 msgid "Choice keyword"
-msgstr "Scelta parola chiave"
+msgstr "Scelta Password"
 
 msgid "City"
 msgstr "Città"
@@ -1076,7 +1076,7 @@ msgid "Fail to enable group inbox"
 msgstr "Impossibile abilitare SMS in arrivo del gruppo"
 
 msgid "Fail to insert keyword"
-msgstr "Impossibile inserire la parola chiave"
+msgstr "Impossibile inserire la password"
 
 msgid "Fail to recover password"
 msgstr "Impossibile recuperare la password"
@@ -1377,7 +1377,7 @@ msgid "Information page"
 msgstr "Pagina informativa"
 
 msgid "Insert keyword"
-msgstr "Inserisci parola chiave"
+msgstr "Inserisci password"
 
 msgid "Internal error please contact service provider"
 msgstr "Errore interno, contattare il fornitore del servizio"
@@ -1951,7 +1951,7 @@ msgid "Pass these parameters to custom URL field"
 msgstr "Passa questi parametri al campo URL personalizzato"
 
 msgid "Password"
-msgstr "Parola d'ordine"
+msgstr "Password"
 
 msgid "Password does not match"
 msgstr "La password non corrisponde"
