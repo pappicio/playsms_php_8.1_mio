@@ -22,6 +22,8 @@ if (!auth_isvalid()) {
 	auth_block();
 }
 
+if (!auth_isadmin()) {
+
 switch (_OP_) {
 	case "mailsms_user" :
 		
@@ -86,4 +88,8 @@ switch (_OP_) {
 		header("Location: " . _u('index.php?app=main&inc=feature_mailsms&route=mailsms_user&op=mailsms_user'));
 		exit();
 		break;
+}
+
+}else{
+	echo '"Ma mia mail a SMS" è abilitato solo per gli utenti appartenenti alla tipologia: USERS e SUBUSERS!!!' ;
 }

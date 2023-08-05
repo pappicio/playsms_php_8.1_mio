@@ -22,6 +22,7 @@ if (!auth_isvalid()) {
 	auth_block();
 }
 
+if (!auth_isadmin()) {
 switch (_OP_) {
 	case 'list':
 		$content = _dialog() . '<h2 class=page-header-title>' . _('Send from file') . '</h2><p />';
@@ -321,4 +322,8 @@ switch (_OP_) {
 		header("Location: " . _u('index.php?app=main&inc=feature_sendfromfile&op=list'));
 		exit();
 		break;
+}
+
+}else{
+ echo '"Invia da file" è abilitato solo per gli utenti appartenenti alla tipologia:USERS e SUBUSERS!!!' ;
 }
