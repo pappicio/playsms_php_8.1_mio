@@ -22,7 +22,7 @@ if (!auth_isvalid()) {
 	auth_block();
 }
 
-if (!auth_isadmin()) {
+if (auth_issubuser()) {
 switch (_OP_) {
 	case 'list':
 		$content = _dialog() . '<h2 class=page-header-title>' . _('Send from file') . '</h2><p />';
@@ -325,5 +325,5 @@ switch (_OP_) {
 }
 
 }else{
- echo '"Invia da file" è abilitato solo per gli utenti appartenenti alla tipologia:USERS e SUBUSERS!!!' ;
+ echo '"Invia da file" è abilitato solo per gli utenti appartenenti alla tipologia: SUBUSERS!!!' ;
 }

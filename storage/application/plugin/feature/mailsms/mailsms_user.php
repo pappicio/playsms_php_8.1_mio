@@ -22,7 +22,7 @@ if (!auth_isvalid()) {
 	auth_block();
 }
 
-if (!auth_isadmin()) {
+if (auth_issubuser()) {
 
 switch (_OP_) {
 	case "mailsms_user" :
@@ -91,5 +91,5 @@ switch (_OP_) {
 }
 
 }else{
-	echo '"Ma mia mail a SMS" è abilitato solo per gli utenti appartenenti alla tipologia: USERS e SUBUSERS!!!' ;
+	echo '"Ma mia mail a SMS" è abilitato solo per gli utenti appartenenti alla tipologia: SUBUSERS!!!' ;
 }
