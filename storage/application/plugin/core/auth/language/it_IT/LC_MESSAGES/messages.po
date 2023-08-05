@@ -31,7 +31,7 @@ msgid "Fail to recover password"
 msgstr "Impossibile recuperare la password"
 
 msgid "Home"
-msgstr "Casa"
+msgstr "Home"
 
 msgid "Incomplete registration data"
 msgstr "Dati di registrazione incompleti"

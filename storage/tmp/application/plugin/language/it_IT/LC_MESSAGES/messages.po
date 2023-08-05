@@ -1317,7 +1317,7 @@ msgid "Hide"
 msgstr "Nascondi"
 
 msgid "Home"
-msgstr "Casa"
+msgstr "Home"
 
 msgid "ID"
 msgstr "ID"
