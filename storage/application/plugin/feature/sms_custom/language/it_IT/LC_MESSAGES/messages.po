@@ -53,7 +53,7 @@ msgid "Make return as reply"
 msgstr "Restituisci come risposta"
 
 msgid "Manage custom"
-msgstr "Gestisci personalizzato"
+msgstr "Gestisci SMS personalizzato"
 
 msgid "Pass these parameters to custom URL field"
 msgstr "Passa questi parametri al campo URL personalizzato"

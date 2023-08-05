@@ -1588,7 +1588,7 @@ msgid "Manage credit"
 msgstr "Gestisci credito"
 
 msgid "Manage custom"
-msgstr "Gestisci personalizzato"
+msgstr "Gestisci SMS personalizzato"
 
 msgid "Manage dev"
 msgstr "Gestisci dev"
