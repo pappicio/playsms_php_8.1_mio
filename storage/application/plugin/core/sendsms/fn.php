@@ -612,7 +612,7 @@ function sendsms_helper($username, $sms_to, $message, $sms_type = 'text', $unico
 	
 	// get destinations
 	for ($i = 0; $i < count($sms_to); $i++) {
-		if (substr(trim($sms_to[$i]), 0, 1) == '€') {
+		if (substr(trim($sms_to[$i]), 0, 1) == '#') {
 			if ($c_group_code = substr(trim($sms_to[$i]), 1)) {
 				$list = phonebook_search_group($user_config['uid'], $c_group_code, '', TRUE);
 				$c_gpid = $list[0]['gpid'];
