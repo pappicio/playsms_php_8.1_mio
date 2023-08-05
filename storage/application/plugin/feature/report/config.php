@@ -69,20 +69,20 @@ $menu_config[$menutab][] = array(
 
 $menutab = $core_config['menutab']['reports'];
 
-if (!auth_isadmin()) {
+
 $menu_config[$menutab][] = array(
 	'index.php?app=main&inc=feature_report&route=user_incoming&op=user_incoming',
 	_('My feature messages'),
 	1
 );
-}
+
 
 if (auth_isadmin()) {
-//$menu_config[$menutab][] = array(
-//	'index.php?app=main&inc=feature_report&route=user_outgoing&op=user_outgoing',
-//	_('I miei SMS inviati'),
-//	1
-//);
+$menu_config[$menutab][] = array(
+	'index.php?app=main&inc=feature_report&route=user_outgoing&op=user_outgoing',
+	_('I miei SMS inviati'),
+	1
+);
 }
 
 if (auth_isuser()) {
@@ -102,26 +102,25 @@ $menu_config[$menutab][] = array(
 //$_SESSION['val'] = 0;
 }
 
-if (!auth_isadmin()) {
+
 $menu_config[$menutab][] = array(
 	"index.php?app=main&inc=feature_report&route=user",
 	_('My report'),
 	2
 );
-}
 
-if (!auth_isadmin()) {
+
+
 $menu_config[$menutab][] = array(
 	"index.php?app=main&inc=feature_report&route=credit&op=credit_list",
 	_('My credit transactions'),
 	2
 );
-}
 
-if (!auth_isadmin()) {
+
+
 $menu_config[$menutab][] = array(
 	"index.php?app=main&inc=feature_report&route=rate&op=rate_list",
 	_('My SMS rate'),
 	2
 );
-}
