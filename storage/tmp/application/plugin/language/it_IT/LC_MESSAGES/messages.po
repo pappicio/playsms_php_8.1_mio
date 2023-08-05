@@ -2856,10 +2856,10 @@ msgid "Unban"
 msgstr "Sbloccare"
 
 msgid "Unicode message"
-msgstr "Messaggio Unicode"
+msgstr "SMS Unicode"
 
 msgid "Unicode message detected automatically"
-msgstr "Messaggio Unicode rilevato automaticamente"
+msgstr "SMS Unicode viene rilevato automaticamente"
 
 msgid "Unknown error"
 msgstr "Errore sconosciuto"

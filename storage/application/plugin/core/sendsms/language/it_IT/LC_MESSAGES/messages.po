@@ -95,10 +95,10 @@ msgid "Templates"
 msgstr "Modelli"
 
 msgid "Unicode message"
-msgstr "Messaggio Unicode"
+msgstr "SMS Unicode"
 
 msgid "Unicode message detected automatically"
-msgstr "Messaggio Unicode rilevato automaticamente"
+msgstr "SMS Unicode viene rilevato automaticamente"
 
 msgid "You must select receiver and your message should not be empty"
 msgstr "Devi selezionare il destinatario e il tuo messaggio non dovrebbe essere vuoto"
