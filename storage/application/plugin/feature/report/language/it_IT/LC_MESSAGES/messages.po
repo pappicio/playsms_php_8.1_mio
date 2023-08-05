@@ -159,7 +159,7 @@ msgid "SMSC"
 msgstr "SMSC"
 
 msgid "Sandbox"
-msgstr "Sabbiera"
+msgstr "Sandbox"
 
 msgid "Select page size"
 msgstr "Seleziona la dimensione della pagina"

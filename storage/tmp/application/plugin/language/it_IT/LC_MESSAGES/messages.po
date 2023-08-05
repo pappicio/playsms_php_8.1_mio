@@ -2491,7 +2491,7 @@ msgid "SMSCs"
 msgstr "SMSC"
 
 msgid "Sandbox"
-msgstr "Sabbiera"
+msgstr "Sandbox"
 
 msgid "Save"
 msgstr "Salva"
