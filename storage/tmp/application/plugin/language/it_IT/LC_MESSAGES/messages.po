@@ -201,7 +201,7 @@ msgid "Add group"
 msgstr "Aggiungi gruppo"
 
 msgid "Add group inbox"
-msgstr "Aggiungi posta in arrivo del gruppo"
+msgstr "Aggiungi SMS in arrivo del gruppo"
 
 msgid "Add member"
 msgstr "Aggiungi membro"
@@ -388,7 +388,7 @@ msgid "Are you sure you want to delete this group ?"
 msgstr "Sei sicuro di voler eliminare questo gruppo?"
 
 msgid "Are you sure you want to delete this group inbox ?"
-msgstr "Sei sicuro di voler eliminare la posta in arrivo di questo gruppo?"
+msgstr "Sei sicuro di voler eliminare SMS in arrivo di questo gruppo?"
 
 msgid "Are you sure you want to delete this member ?"
 msgstr "Sei sicuro di voler eliminare questo membro?"
@@ -577,7 +577,7 @@ msgid "Content"
 msgstr "Contenuto"
 
 msgid "Copy the message to user inbox when incoming SMS contains @username"
-msgstr "Copia il messaggio nella casella di posta dell'utente quando l'SMS in arrivo contiene @username"
+msgstr "Copia il messaggio negli SMS in arrivo dell'utente quando l'SMS in arrivo contiene @username"
 
 msgid "Core"
 msgstr "Nucleo"
@@ -704,7 +704,7 @@ msgid "Delete catch-all"
 msgstr "Elimina catch-all"
 
 msgid "Delete group inbox"
-msgstr "Elimina posta in arrivo del gruppo"
+msgstr "Elimina SMS in arrivo del gruppo"
 
 msgid "Delete member"
 msgstr "Elimina membro"
@@ -797,7 +797,7 @@ msgid "Edit group"
 msgstr "Modifica gruppo"
 
 msgid "Edit group inbox"
-msgstr "Modifica posta in arrivo del gruppo"
+msgstr "Modifica SMS in arrivo del gruppo"
 
 msgid "Edit message"
 msgstr "Modifica messaggio"
@@ -948,7 +948,7 @@ msgid "Fail to add credit"
 msgstr "Impossibile aggiungere credito"
 
 msgid "Fail to add group inbox"
-msgstr "Impossibile aggiungere la posta in arrivo del gruppo"
+msgstr "Impossibile aggiungere SMS in arrivo del gruppo"
 
 msgid "Fail to add member"
 msgstr "Impossibile aggiungere un membro"
@@ -1021,7 +1021,7 @@ msgid "Fail to delete group"
 msgstr "Impossibile eliminare il gruppo"
 
 msgid "Fail to delete group inbox"
-msgstr "Impossibile eliminare la posta in arrivo del gruppo"
+msgstr "Impossibile eliminare SMS in arrivo del gruppo"
 
 msgid "Fail to delete member"
 msgstr "Impossibile eliminare il membro"
@@ -1037,7 +1037,7 @@ msgid "Fail to deliver uploaded SMS to queue"
 msgstr "Impossibile consegnare gli SMS caricati alla coda"
 
 msgid "Fail to disable group inbox"
-msgstr "Impossibile disabilitare la posta in arrivo del gruppo"
+msgstr "Impossibile disabilitare SMS in arrivo del gruppo"
 
 msgid "Fail to edit ACL"
 msgstr "Impossibile modificare l'ACL"
@@ -1064,7 +1064,7 @@ msgid "Fail to edit destination"
 msgstr "Impossibile modificare la destinazione"
 
 msgid "Fail to edit group inbox"
-msgstr "Impossibile modificare la posta in arrivo del gruppo"
+msgstr "Impossibile modificare SMS  in arrivo del gruppo"
 
 msgid "Fail to edit message"
 msgstr "Impossibile modificare il messaggio"
@@ -1073,7 +1073,7 @@ msgid "Fail to edit message template"
 msgstr "Impossibile modificare il modello di messaggio"
 
 msgid "Fail to enable group inbox"
-msgstr "Impossibile abilitare la posta in arrivo del gruppo"
+msgstr "Impossibile abilitare SMS in arrivo del gruppo"
 
 msgid "Fail to insert keyword"
 msgstr "Impossibile inserire la parola chiave"
@@ -1192,7 +1192,7 @@ msgid "Forward message to email"
 msgstr "Inoltra il messaggio all'e-mail"
 
 msgid "Forward message to inbox"
-msgstr "Inoltra il messaggio alla posta in arrivo"
+msgstr "Inoltra il messaggio agli SMS in arrivo"
 
 msgid "Forward message to mobile"
 msgstr "Inoltra messaggio al cellulare"
@@ -1281,22 +1281,22 @@ msgid "Group has been edited but unable to set broadcast from members or anyone"
 msgstr "Il gruppo è stato modificato ma non è possibile impostare la trasmissione dai membri o da altri"
 
 msgid "Group inbox"
-msgstr "Posta in arrivo di gruppo"
+msgstr "SMS in arrivo di gruppo"
 
 msgid "Group inbox has been added"
-msgstr "è stata aggiunta la posta in arrivo del gruppo"
+msgstr "è stata aggiunta SMS in arrivo del gruppo"
 
 msgid "Group inbox has been deleted"
-msgstr "La posta in arrivo del gruppo è stata eliminata"
+msgstr "SMS in arrivo del gruppo è stata eliminata"
 
 msgid "Group inbox has been disabled"
-msgstr "La Posta in arrivo di gruppo è stata disabilitata"
+msgstr "SMS in arrivo di gruppo è stata disabilitata"
 
 msgid "Group inbox has been edited"
-msgstr "La posta in arrivo del gruppo è stata modificata"
+msgstr "SMS in arrivo del gruppo è stata modificata"
 
 msgid "Group inbox has been enabled"
-msgstr "La posta in arrivo di gruppo è stata abilitata"
+msgstr "SMS in arrivo di gruppo è stata abilitata"
 
 msgid "Group name"
 msgstr "Nome del gruppo"
@@ -1350,7 +1350,7 @@ msgid "Import confirmation"
 msgstr "Conferma importazione"
 
 msgid "Inbox"
-msgstr "Posta in arrivo"
+msgstr "SMS in arrivo"
 
 msgid "Incoming SMS route changes has been saved"
 msgstr "Le modifiche al percorso degli SMS in arrivo sono state salvate"
@@ -1525,16 +1525,16 @@ msgid "MBOX output"
 msgstr "Uscita MBOX"
 
 msgid "Mail server address"
-msgstr "Indirizzo del server di posta"
+msgstr "Indirizzo del server di posta elettronica"
 
 msgid "Mail server port"
-msgstr "Porta del server di posta"
+msgstr "Porta del server di posta elettronica"
 
 msgid "Mailbox password"
-msgstr "Password della casella di posta"
+msgstr "Password della casella di posta elettronica"
 
 msgid "Mailbox username"
-msgstr "nome utente della casella di posta"
+msgstr "nome utente della casella di posta elettronica"
 
 msgid "Main configuration"
 msgstr "Configurazione principale"
@@ -1999,7 +1999,7 @@ msgid "Please use uppercase and make it short"
 msgstr "Si prega di utilizzare lettere maiuscole e di renderle brevi"
 
 msgid "Post rules"
-msgstr "Regole postali"
+msgstr "Post-Regole"
 
 msgid "Pre rules"
 msgstr "Pre regole"
@@ -2199,13 +2199,13 @@ msgid "Report"
 msgstr "Rapporto"
 
 msgid "Report all users"
-msgstr "Segnala tutti gli utenti"
+msgstr "Rapporto di tutti gli utenti"
 
 msgid "Report banned users"
-msgstr "Segnala utenti bannati"
+msgstr "Rapporto degli utenti bannati"
 
 msgid "Report whose online"
-msgstr "Segnala di chi è online"
+msgstr "Rapporto utenti online"
 
 msgid "Reports"
 msgstr "Rapporti"
@@ -2253,7 +2253,7 @@ msgid "Route outgoing SMS"
 msgstr "Instrada SMS in uscita"
 
 msgid "Route to user inbox if receiver number matched with user sender ID"
-msgstr "Instrada alla posta in arrivo dell'utente se il numero del destinatario corrisponde all'ID del mittente dell'utente"
+msgstr "Instrada agli SMS in arrivo dell'utente se il numero del destinatario corrisponde all'ID del mittente dell'utente"
 
 msgid "Routed SMSC"
 msgstr "SMSC instradato"
@@ -2811,7 +2811,7 @@ msgid "URL"
 msgstr "URL"
 
 msgid "URL to playSMS, empty it to set it to base URL"
-msgstr "URL to playSMS, svuotalo per impostarlo sull'URL di base"
+msgstr "URL di playSMS, svuotalo per impostarlo sull'URL di base"
 
 msgid "URLs"
 msgstr "URL"
@@ -2997,7 +2997,7 @@ msgid "View board"
 msgstr "Visualizza bacheca"
 
 msgid "View log"
-msgstr "Visualizza registro"
+msgstr "Visualizza Log"
 
 msgid "View members"
 msgstr "Visualizza membri"

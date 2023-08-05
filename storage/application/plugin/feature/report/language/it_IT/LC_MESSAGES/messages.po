@@ -91,7 +91,7 @@ msgid "Gateway"
 msgstr "Porta"
 
 msgid "Inbox"
-msgstr "Posta in arrivo"
+msgstr "SMS in arrivo"
 
 msgid "Keyword"
 msgstr "Parola chiave"
@@ -147,13 +147,13 @@ msgid "Report"
 msgstr "Rapporto"
 
 msgid "Report all users"
-msgstr "Segnala tutti gli utenti"
+msgstr "Rapporto di tutti gli utenti"
 
 msgid "Report banned users"
-msgstr "Segnala utenti bannati"
+msgstr "Rapporto degli utenti bannati"
 
 msgid "Report whose online"
-msgstr "Segnala di chi è online"
+msgstr "Rapporto utenti online"
 
 msgid "SMSC"
 msgstr "SMSC"

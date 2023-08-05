@@ -87,7 +87,7 @@ msgid "Import"
 msgstr "Importa"
 
 msgid "Inbox"
-msgstr "Posta in arrivo"
+msgstr "SMS in arrivo"
 
 msgid "Info"
 msgstr "Informazioni"

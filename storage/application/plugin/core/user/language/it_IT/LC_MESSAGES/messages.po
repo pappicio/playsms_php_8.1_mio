@@ -175,7 +175,7 @@ msgid "Forward message to email"
 msgstr "Inoltra il messaggio all'e-mail"
 
 msgid "Forward message to inbox"
-msgstr "Inoltra il messaggio alla posta in arrivo"
+msgstr "Inoltra il messaggio a SMS in arrivo"
 
 msgid "Forward message to mobile"
 msgstr "Inoltra messaggio al cellulare"

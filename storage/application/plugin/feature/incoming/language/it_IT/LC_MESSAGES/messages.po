@@ -13,7 +13,7 @@ msgstr ""
 "X-Generator: Poedit 2.2\n"
 
 msgid "Copy the message to user inbox when incoming SMS contains @username"
-msgstr "Copia il messaggio nella casella di posta dell'utente quando l'SMS in arrivo contiene @username"
+msgstr "Copia il messaggio negli SMS in arrivo dell'utente quando l'SMS in arrivo contiene @username"
 
 msgid "Example"
 msgstr "Esempio"
@@ -43,7 +43,7 @@ msgid "No route has been saved"
 msgstr "Nessun percorso è stato salvato"
 
 msgid "Post rules"
-msgstr "Regole postali"
+msgstr "Post-Regole"
 
 msgid "Pre rules"
 msgstr "Pre regole"
@@ -64,7 +64,7 @@ msgid "Route incoming SMS"
 msgstr "Instrada SMS in arrivo"
 
 msgid "Route to user inbox if receiver number matched with user sender ID"
-msgstr "Instrada alla posta in arrivo dell'utente se il numero del destinatario corrisponde all'ID del mittente dell'utente"
+msgstr "Instrada a SMS in arrivo dell'utente se il numero del destinatario corrisponde all'ID del mittente dell'utente"
 
 msgid "Rules applied after incoming SMS processed"
 msgstr "Regole applicate dopo l'elaborazione degli SMS in arrivo"

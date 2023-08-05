@@ -16,4 +16,4 @@ msgid "Refresh"
 msgstr "Aggiorna"
 
 msgid "View log"
-msgstr "Visualizza registro"
+msgstr "Visualizza Log"
