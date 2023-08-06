@@ -325,5 +325,19 @@ switch (_OP_) {
 }
 
 }else{
- echo '"Invia da file" è abilitato solo per gli utenti appartenenti alla tipologia: SUBUSERS!!!' ;
+
+
+
+		$img_size_array = getimagesize('plugin/themes/common/images/playSMS_logo_full.png');
+  		$width = ($img_size_array[0]/3);
+  		$height = ($img_size_array[1]/3);
+	
+		echo "<img src='plugin/themes/common/images/playSMS_logo_full.png' height=$height width=$width >";  
+		
+		echo  nl2br ("\n");
+		echo  nl2br ("\n");
+		echo  nl2br ("\n");
+		
+			
+		echo '<span style="font-size: 26px;"> "Invia da file" è abilitato solo per gli utenti appartenenti alla tipologia: SUBUSERS!!! </a></span>';
 }
