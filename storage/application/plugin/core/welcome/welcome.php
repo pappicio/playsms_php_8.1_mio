@@ -22,6 +22,16 @@ if (!auth_isvalid()) {
 	auth_block();
 }
 
+	echo "<div style='text-align:center'>";
+		$img_size_array = getimagesize('plugin/themes/common/images/playSMS_logo_full.png');
+  		$width = ($img_size_array[0]/7);
+  		$height = ($img_size_array[1]/7);
+	
+		echo "<img src='plugin/themes/common/images/playSMS_logo_full.png' height=$height width=$width >";  
+	echo "<div style='text-align:left'>";
+	
+
+
 $fn = _APPS_PATH_THEMES_ . '/' . core_themes_get() . '/welcome.php';
 
 if (file_exists($fn)) {

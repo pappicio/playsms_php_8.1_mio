@@ -327,13 +327,13 @@ switch (_OP_) {
 }else{
 
 
-
+		echo "<div style='text-align:center'>";
 		$img_size_array = getimagesize('plugin/themes/common/images/playSMS_logo_full.png');
-  		$width = ($img_size_array[0]/3);
-  		$height = ($img_size_array[1]/3);
-	
+  		$width = ($img_size_array[0]/6);
+  		$height = ($img_size_array[1]/6);
 		echo "<img src='plugin/themes/common/images/playSMS_logo_full.png' height=$height width=$width >";  
-		
+		echo "<div style='text-align:left'>";
+
 		echo  nl2br ("\n");
 		echo  nl2br ("\n");
 		echo  nl2br ("\n");
