@@ -501,7 +501,7 @@ _log('ELIMINAZIONE SMS' ,3, 'elimino messaggi piu vecchi di 7 gg...');
 					//}
 				}
 				$ref = $nav['url'] . '&search_keyword=' . $search['keyword'] . '&page=' . $nav['page'] . '&nav=' . $nav['nav'];
-				$_SESSION['dialog']['info'][] = _('All messages older than 7 days, has been deleted');
+				$_SESSION['dialog']['info'][] = _('Tutti gli SMS più vecchi di 7 gg sono stati eliminati!');
 				header("Location: " . _u($ref));
 				exit();
 		}
