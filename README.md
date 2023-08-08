@@ -1,3 +1,27 @@
+SOME ACL:
+
+SUBUSERS
+
+
+inc=core_sendsms,
+
+inc=feature_report&route=user,
+
+inc=feature_phonebook&op=phonebook_list,
+
+inc=feature_report&route=user_outgoing&op=user_outgoing,
+
+inc=feature_report&route=user_outgoing&op=user_refresh,
+
+inc=core_user&route=user_pref&op=user_pref,
+
+inc=feature_report&route=user_inbox&op=user_inbox,
+
+inc=feature_queuelog
+
+
+
+
 # README
 
 Latest development release is playSMS version **1.5.0-beta5**
