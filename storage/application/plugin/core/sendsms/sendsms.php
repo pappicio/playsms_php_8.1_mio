@@ -200,13 +200,13 @@ switch (_OP_) {
 			$_SESSION['tmp']['themes']['layout'] = '';
 			
 			if ($url_ok<>''){
-				header("Location: " .$url_ok);
+				header("Location: " . _u($url_ok));
 			}else{
 				header("Location: " . $return_url);
 			}
 		} else {
 			if ($url_ok<>''){
-				header("Location: " .$url_ok);
+				header("Location: " . _u($url_ok));
 			}else{
 				header("Location: " . _u('index.php?app=main&inc=core_sendsms&op=sendsms'));
 			}
