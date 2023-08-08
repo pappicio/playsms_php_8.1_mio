@@ -40,6 +40,8 @@ inc=feature_report&route=user,
 
 inc=feature_phonebook&op=phonebook_list,
 
+!inc=feature_phonebook&route=group,
+
 inc=feature_report&route=user_outgoing&op=user_outgoing,
 
 inc=feature_report&route=user_outgoing&op=user_refresh,
@@ -58,6 +60,8 @@ inc=core_sendsms,
 inc=feature_report&route=user,
 
 inc=feature_phonebook,
+
+!inc=feature_phonebook&route=group,
 
 inc=feature_report&route=user_outgoing&op=user_outgoing,
 
