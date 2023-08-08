@@ -45,12 +45,12 @@ switch (_OP_) {
 		$join = 'LEFT JOIN ' . _DB_PREF_ . '_featurePhonebook_group_contacts AS C ON A.id=C.pid ';
 		$join .= 'LEFT JOIN ' . _DB_PREF_ . '_featurePhonebook_group AS B ON B.id=C.gpid';
 		$conditions = array(
-			'( A.uid' => $user_config['uid'] . "' OR B.id in (
+			'( A.uid' => user_getparentbyuid($user_config["uid"])  . "' OR B.id in (
 				SELECT B.id AS id FROM " . _DB_PREF_ . "_featurePhonebook AS A
 				" . $join . "
 				WHERE A.mobile LIKE '%" . core_mobile_matcher_format($user_config['mobile']) . "'
 				AND B.flag_sender='1'
-				) OR ( A.uid <>'" . $user_config['uid'] . "' AND B.flag_sender>'1' ) ) AND '1'='1" 
+				) OR ( A.uid <>'" . user_getparentbyuid($user_config["uid"]) . "' AND B.flag_sender>'1' ) ) AND '1'='1" 
 		);
 
 // modified by andregronwald (author of code: erick_hdz), issued by https://forum.playsms.org/t/share-user-phonebook-with-its-subusers-solved/483/3
@@ -88,6 +88,9 @@ switch (_OP_) {
 			" . _CSRF_FORM_ . "
 			<input type=hidden id=action_route name=route value=''>
 				<div class=playsms-actions-box>
+					<div class=pull-left>
+						<a href='" . _u('index.php?app=main&inc=feature_phonebook&op=phonebook_add') . "'>" . $icon_config['user_add'] . "</a>
+					</div>
 					<script type='text/javascript'>
 						$(document).ready(function() {
 							$('#action_go').click(function(){
@@ -127,12 +130,12 @@ switch (_OP_) {
 			$groupfields = 'B.id AS id, B.uid AS uid, B.code AS code, B.flag_sender AS flag_sender';
 			$groupconditions = array(
 				'C.pid' => $list[$j]['pid'],
-				'( B.uid' => $user_config['uid'] . "' OR B.id in (
+				'( B.uid' => user_getparentbyuid($user_config["uid"]) . "' OR B.id in (
 					SELECT B.id AS id FROM " . _DB_PREF_ . "_featurePhonebook AS A
 					" . $join . "
 					WHERE A.mobile LIKE '%" . core_mobile_matcher_format($user_config['mobile']) . "'
 					AND B.flag_sender='1'
-					) OR ( B.uid<>'" . $user_config['uid'] . "' AND B.flag_sender>'1' ) ) AND '1'='1" 
+					) OR ( B.uid<>'" . user_getparentbyuid($user_config["uid"]) . "' AND B.flag_sender>'1' ) ) AND '1'='1" 
 			);
 			$groupextras = array(
 				'ORDER BY' => 'B.code ASC',
@@ -141,7 +144,7 @@ switch (_OP_) {
 			$groupjoin = 'INNER JOIN ' . _DB_PREF_ . '_featurePhonebook_group_contacts AS C ON C.gpid = B.id';
 			$grouplist = dba_search(_DB_PREF_ . '_featurePhonebook_group AS B', $groupfields, $groupconditions, '', $groupextras, $groupjoin);
 			for ($k = 0; $k < count($grouplist); $k++) {
-				if ($grouplist[$k]['uid'] == $user_config['uid']) {
+				if ($grouplist[$k]['uid'] == user_getparentbyuid($user_config["uid"])) {
 					$group_code .= $phonebook_flag_sender[$grouplist[$k]['flag_sender']] . "<a href=\"" . _u('index.php?app=main&inc=feature_phonebook&route=group&op=edit&gpid=' . $grouplist[$k]['id']) . "\">" . strtoupper($grouplist[$k]['code']) . "</a><br />";
 				} else {
 					$group_code .= $phonebook_flag_sender[$grouplist[$k]['flag_sender']] . strtoupper($grouplist[$k]['code']) . "<br />";
@@ -149,7 +152,7 @@ switch (_OP_) {
 			}
 			$i--;
 			$c_i = "<a href=\"" . _u('index.php?app=main&inc=feature_phonebook&op=phonebook_edit&id=' . $pid) . "\">" . $i . ".</a>";
-			if ($list[$j]['uid'] == $user_config['uid']) {
+			if ($list[$j]['uid'] == user_getparentbyuid($user_config["uid"])) {
 				$name = "<a href='" . _u('index.php?app=main&inc=feature_phonebook&op=phonebook_edit&pid=' . $pid) . "'>" . $name . "</a>";
 			}
 			$content .= "
@@ -177,12 +180,12 @@ switch (_OP_) {
 		break;
 	case "phonebook_add":
 		$phone = trim(urlencode($_REQUEST['phone']));
-		$uid = $user_config['uid'];
+		$uid = user_getparentbyuid($user_config["uid"]) ; //$uid = $user_config['uid'];
 		$db_query = "SELECT * FROM " . _DB_PREF_ . "_featurePhonebook_group WHERE uid='$uid'";
 		$db_result = dba_query($db_query);
-		$list_of_group = "<option value=0 selected>-- " . _('No group') . " --</option>";
+		//$list_of_group = "<option value=0 selected>-- " . _('No group') . " --</option>";
 		while ($db_row = dba_fetch_array($db_result)) {
-			$list_of_group .= "<option value=" . $db_row['id'] . ">" . $db_row['name'] . " - " . _('code') . ": " . $db_row['code'] . "</option>";
+			$list_of_group = "<option value=" . $db_row['id'] . ">" . $db_row['name'] . " - " . _('code') . ": " . $db_row['code'] . "</option>";
 		}
 		$content = _dialog() . "
 			<h2 class=page-header-title>" . _('Phonebook') . "</h2>
@@ -204,7 +207,7 @@ switch (_OP_) {
 		_p($content);
 		break;
 	case "phonebook_edit":
-		$uid = $user_config['uid'];
+		$uid = user_getparentbyuid($user_config["uid"]) ; //$uid = $user_config['uid'];
 		$pid = $_REQUEST['pid'];
 		$list = dba_search(_DB_PREF_ . '_featurePhonebook', '*', array(
 			'id' => $pid,
@@ -212,7 +215,7 @@ switch (_OP_) {
 		));
 		$db_query = "SELECT * FROM " . _DB_PREF_ . "_featurePhonebook_group WHERE uid='$uid'";
 		$db_result = dba_query($db_query);
-		$list_of_group = "<option value=0>-- " . _('No group') . " --</option>";
+		//$list_of_group = "<option value=0>-- " . _('No group') . " --</option>";
 		while ($db_row = dba_fetch_array($db_result)) {
 			$selected = '';
 			$conditions = array(
@@ -222,7 +225,7 @@ switch (_OP_) {
 			if (dba_isexists(_DB_PREF_ . '_featurePhonebook_group_contacts', $conditions, 'AND')) {
 				$selected = 'selected';
 			}
-			$list_of_group .= "<option value=" . $db_row['id'] . " $selected>" . $db_row['name'] . " - " . _('code') . ": " . $db_row['code'] . "</option>";
+			$list_of_group  = "<option value=" . $db_row['id'] . " $selected>" . $db_row['name'] . " - " . _('code') . ": " . $db_row['code'] . "</option>";
 		}
 		$content = _dialog() . "
 			<h2 class=page-header-title>" . _('Phonebook') . "</h2>
@@ -289,7 +292,7 @@ switch (_OP_) {
 				core_download($content, $fn, 'text/csv');
 				break;
 			case 'add':
-				$uid = $user_config['uid'];
+				$uid = user_getparentbyuid($user_config["uid"]) ; //$uid = $user_config['uid'];
 				$gpids = $_POST['gpids'];
 				$save_to_group = FALSE;
 				$name = str_replace("\'", "", $_POST['name']);
@@ -345,7 +348,7 @@ switch (_OP_) {
 				exit();
 				break;
 			case 'edit':
-				$uid = $user_config['uid'];
+				$uid = user_getparentbyuid($user_config["uid"]) ; //$uid = $user_config['uid'];
 				$c_pid = $_POST['pid'];
 				$gpids = $_POST['gpids'];
 				$maps = [];
@@ -571,7 +574,9 @@ switch (_OP_) {
 		break;
 	case "phonebook_add":
 		$phone = trim(urlencode($_REQUEST['phone']));
-		$uid = $user_config['uid'];
+
+		$user_config['uid'];
+
 		$db_query = "SELECT * FROM " . _DB_PREF_ . "_featurePhonebook_group WHERE uid='$uid'";
 		$db_result = dba_query($db_query);
 		$list_of_group = "<option value=0 selected>-- " . _('No group') . " --</option>";
