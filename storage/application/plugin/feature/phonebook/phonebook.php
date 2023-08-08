@@ -575,7 +575,7 @@ switch (_OP_) {
 	case "phonebook_add":
 		$phone = trim(urlencode($_REQUEST['phone']));
 
-		$user_config['uid'];
+		$uid = $user_config['uid'];
 
 		$db_query = "SELECT * FROM " . _DB_PREF_ . "_featurePhonebook_group WHERE uid='$uid'";
 		$db_result = dba_query($db_query);
@@ -806,7 +806,7 @@ switch (_OP_) {
 		break;
 }
 
-#########################################################################################################################################
+/////////#########################################################################################################################################
 
 }else if (auth_isadmin()) {
 switch (_OP_) {
