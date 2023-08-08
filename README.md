@@ -1,5 +1,36 @@
 SOME ACL:
 
+
+USERS
+
+inc=feature_msgtemplate&op=list,
+
+!inc=feature_phonebook&op=actions&go=export,
+
+!inc=feature_phonebook&route=import&op=list,
+
+inc=core_user&route=subuser_mgmnt,
+
+inc=feature_report&route=user,
+
+inc=feature_schedule,
+
+inc=feature_phonebook,
+
+inc=feature_report&route=user_outgoing&op=user_outgoing,
+
+inc=feature_sms_custom&op=sms_custom_list,
+
+inc=feature_report&route=user_outgoing&op=user_refresh,
+
+inc=core_user&route=user_pref&op=user_pref,
+
+inc=feature_report&route=user_inbox&op=user_inbox,
+
+inc=feature_queuelog
+
+
+
 SUBUSERS
 
 
