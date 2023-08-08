@@ -35,6 +35,7 @@ switch (_OP_) {
 		);
 		$keywords = $search['dba_keywords'];
 		$count = dba_count(_DB_PREF_ . '_featurePhonebook_group', $conditions, $keywords);
+		$_SESSION['conta']=$count+0;
 		$nav = themes_nav($count, $search['url']);
 		$extras = array(
 			'ORDER BY' => 'name',
@@ -97,6 +98,13 @@ switch (_OP_) {
 		_p($content);
 		break;
 	case "add":
+		if ($_SESSION['conta'] > 0 ) {
+			$_SESSION['dialog']['danger'][] = _('Si può aggiungere solo un Gruppo per UTENTE!');
+
+			header("Location: " . _u('index.php?app=main&inc=feature_phonebook&route=group&op=list'));
+			exit();
+			break;
+		}
 		$option_flag_sender = "
 			<option value='0'>" . _('User') . "</option>
 			<option value='1' selected >" . _('Group') .  " </option>
