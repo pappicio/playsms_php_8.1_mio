@@ -99,7 +99,7 @@ switch (_OP_) {
 	case "add":
 		$option_flag_sender = "
 			<option value='0'>" . _('User') . "</option>
-			<option value='1'>" . _('Group') . "</option>
+			<option value='1' selected >" . _('Group') .  " </option>
 			<option value='2'>" . _('All users') . "</option>";
 		$content = _dialog() . "
 			<h2 class=page-header-title>" . _('Phonebook') . "</h2>
