@@ -23,7 +23,7 @@ if (!auth_isuser()) {
 		auth_block();
 	}
 }
-
+ 
 if ($_REQUEST['uname']) {
 	$subuser_edited = user_getdatabyusername($_REQUEST['uname']);
 	if (($subuser_edited['status'] != 4) || ($subuser_edited['parent_uid'] != $user_config['uid'])) {
