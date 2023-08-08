@@ -168,7 +168,7 @@ switch (_OP_) {
 		if ($sms_to = trim($_REQUEST['p_num_text'])) {
 			$sms_to = explode(',', $sms_to);
 		}
-		
+		$url_ok='';
 		if ($sms_to[0] && $message) {
 			
 			list($ok, $to, $smslog_id, $queue, $counts, $sms_count, $sms_failed, $error_strings) = sendsms_helper($user_config['username'], $sms_to, $message, $sms_type, $unicode, '', $nofooter, $sms_footer, $sms_sender, $sms_schedule, $reference_id);
@@ -179,6 +179,7 @@ switch (_OP_) {
 				$_SESSION['dialog']['danger'][] = _('Your message has been delivered to some of the destinations') . " (" . _('queued') . ":" . (int) $sms_count . " " . _('failed') . ":" . (int) $sms_failed . ")";
 			} else if ($sms_count && !$sms_failed) {
 				$_SESSION['dialog']['info'][] = _('Your message has been delivered to queue') . " (" . _('queued') . ":" . (int) $sms_count . " " . _('failed') . ":" . (int) $sms_failed . ")";
+				$url_ok='index.php?app=main&inc=feature_report&route=user_outgoing&op=user_refresh';
 			} else {
 				if (!is_array($error_strings)) {
 					$_SESSION['dialog']['danger'][] = $error_strings;
@@ -198,9 +199,18 @@ switch (_OP_) {
 			// also clear themes_layout
 			$_SESSION['tmp']['themes']['layout'] = '';
 			
-			header("Location: " . $return_url);
+			if ($url_ok<>''){
+				header("Location: " .$url_ok);
+			}else{
+				header("Location: " . $return_url);
+			}
 		} else {
-			header("Location: " . _u('index.php?app=main&inc=core_sendsms&op=sendsms'));
+			if ($url_ok<>''){
+				header("Location: " .$url_ok);
+			}else{
+				header("Location: " . _u('index.php?app=main&inc=core_sendsms&op=sendsms'));
+			}
+
 		}
 		exit();
 		break;
