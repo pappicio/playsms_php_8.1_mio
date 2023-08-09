@@ -31,6 +31,7 @@ switch (_OP_) {
 		$_SESSION['val']=0;
 		$_SESSION['link']='';
 		$_SESSION['refresh'] = ' (autorefresh ON)';
+		header('Refresh: 15');
 		$ref = $nav['url'] . 'index.php?app=main&inc=feature_report&route=user_outgoing&op=user_outgoing';
 		header("Location: " . _u($ref));
 		exit();
@@ -189,7 +190,7 @@ _log('ELIMINAZIONE SMS' ,3, 'elimino messaggi piu vecchi di 7 gg...');
 				
 				<div class=pull-right>" . _submit(_('Are you sure you want to delete ?'), 'fm_user_outgoing', 'delete') . "</div>
 
-				<div class=pull-right><td> Elimina gli SMS piu vecchi di 7 giorni ->&emsp; </td></div>
+				<div class=pull-right><td> Elimina gli SMS più vecchi di 7 giorni ->&emsp; </td></div>
 
 			</div>
 
@@ -354,11 +355,13 @@ _log('ELIMINAZIONE SMS' ,3, 'elimino messaggi piu vecchi di 7 gg...');
 			}
 		if ($_SESSION['val'] < 10) {
 			$_SESSION['refresh']=' (autorefresh ON)';
-			if ($_SESSION['val'] < 2) {
-				header('Refresh: 1');
-			}else{
-				header('Refresh: 15');
-			}
+			//if ($_SESSION['val'] < 2) {
+			//	header('Refresh: 1');
+			//}else{
+			//	header('Refresh: 15');
+			//}
+
+			header('Refresh: 15');
 			}elseif ($_SESSION['val'] == 10){
 			$_SESSION['val']=12;
 			$_SESSION['refresh']=' (autorefresh OFF)';
