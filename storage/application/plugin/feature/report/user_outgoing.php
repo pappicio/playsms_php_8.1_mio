@@ -190,7 +190,7 @@ _log('ELIMINAZIONE SMS' ,3, 'elimino messaggi piu vecchi di 7 gg...');
 				
 				<div class=pull-right>" . _submit(_('Are you sure you want to delete ?'), 'fm_user_outgoing', 'delete') . "</div>
 
-				<div class=pull-right><td> Elimina gli SMS più vecchi di 7 giorni ->&emsp; </td></div>
+				<div class=pull-right><td> Elimina gli SMS piu vecchi di 7 giorni ->&emsp; </td></div>
 
 			</div>
 
