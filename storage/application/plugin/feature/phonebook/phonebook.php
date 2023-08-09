@@ -183,9 +183,9 @@ switch (_OP_) {
 		$uid = user_getparentbyuid($user_config["uid"]) ; //$uid = $user_config['uid'];
 		$db_query = "SELECT * FROM " . _DB_PREF_ . "_featurePhonebook_group WHERE uid='$uid'";
 		$db_result = dba_query($db_query);
-		//$list_of_group = "<option value=0 selected>-- " . _('No group') . " --</option>";
+		$list_of_group = "<option value=0 selected>-- " . _('No group') . " --</option>";
 		while ($db_row = dba_fetch_array($db_result)) {
-			$list_of_group = "<option value=" . $db_row['id'] . ">" . $db_row['name'] . " - " . _('code') . ": " . $db_row['code'] . "</option>";
+			$list_of_group .= "<option value=" . $db_row['id'] . ">" . $db_row['name'] . " - " . _('code') . ": " . $db_row['code'] . "</option>";
 		}
 		$content = _dialog() . "
 			<h2 class=page-header-title>" . _('Phonebook') . "</h2>
@@ -215,7 +215,7 @@ switch (_OP_) {
 		));
 		$db_query = "SELECT * FROM " . _DB_PREF_ . "_featurePhonebook_group WHERE uid='$uid'";
 		$db_result = dba_query($db_query);
-		//$list_of_group = "<option value=0>-- " . _('No group') . " --</option>";
+		$list_of_group = "<option value=0>-- " . _('No group') . " --</option>";
 		while ($db_row = dba_fetch_array($db_result)) {
 			$selected = '';
 			$conditions = array(
@@ -225,7 +225,7 @@ switch (_OP_) {
 			if (dba_isexists(_DB_PREF_ . '_featurePhonebook_group_contacts', $conditions, 'AND')) {
 				$selected = 'selected';
 			}
-			$list_of_group  = "<option value=" . $db_row['id'] . " $selected>" . $db_row['name'] . " - " . _('code') . ": " . $db_row['code'] . "</option>";
+			$list_of_group .= "<option value=" . $db_row['id'] . " $selected>" . $db_row['name'] . " - " . _('code') . ": " . $db_row['code'] . "</option>";
 		}
 		$content = _dialog() . "
 			<h2 class=page-header-title>" . _('Phonebook') . "</h2>
