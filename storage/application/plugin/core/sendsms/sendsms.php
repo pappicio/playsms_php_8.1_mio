@@ -204,13 +204,13 @@ switch (_OP_) {
 			$_SESSION['tmp']['themes']['layout'] = '';
 			
 			if ($url_ok<>''){
-				fx_alert_and_redirect("titolo", "messaggio", $url_ok);
+				fx_alert_and_redirect("...INVIO SMS IN CORSO...", "Gli SMS Stanno per essere inviati... Reindirizzo alla pagina SMS in Uscita...", $url_ok);
 			}else{
 				header("Location: " . $return_url);
 			}
 		} else {
 			if ($url_ok<>''){
-				fx_alert_and_redirect("...INVIO SMS IN CORSO...", "GLi SMS Stanno per essere inviati... Reindirizzo alla pagina degli SMS in Uscita...", $url_ok);
+				fx_alert_and_redirect("...INVIO SMS IN CORSO...", "Gli SMS Stanno per essere inviati... Reindirizzo alla pagina SMS in Uscita...", $url_ok);
 			}else{
 				header("Location: " . _u('index.php?app=main&inc=core_sendsms&op=sendsms'));
 			}
