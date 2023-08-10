@@ -31,7 +31,7 @@ switch (_OP_) {
 		$_SESSION['val']=0;
 		$_SESSION['link']='';
 		$_SESSION['refresh'] = ' (autorefresh ON)';
-		header('Refresh: 15');
+		header('Refresh: 20');
 		$ref = $nav['url'] . 'index.php?app=main&inc=feature_report&route=user_outgoing&op=user_outgoing';
 		header("Location: " . _u($ref));
 		exit();
@@ -186,7 +186,7 @@ _log('ELIMINAZIONE SMS' ,3, 'elimino messaggi piu vecchi di 7 gg...');
 					<a href=\"" . _u('index.php?app=main&inc=feature_report&route=user_outgoing&op=actions&go=startstoprefresh&queue_code=' . $queue_code) . "\">" . $icon_config['action'] . "</a>
 				</div>
 				
-				<td> <- Imposta ON/OFF Autorefresh pagina (10 volte, ogni 15s e solo se SMS ancora in attesa) </td>
+				<td> <- Imposta ON/OFF Autorefresh pagina (10 volte, ogni 20s e solo se SMS ancora in attesa) </td>
 				
 				<div class=pull-right>" . _submit(_('Are you sure you want to delete ?'), 'fm_user_outgoing', 'delete') . "</div>
 
@@ -358,7 +358,7 @@ _log('ELIMINAZIONE SMS' ,3, 'elimino messaggi piu vecchi di 7 gg...');
 			if ($_SESSION['val'] < 2) {
 				header('Refresh: 3');
 			}else{
-				header('Refresh: 15');
+				header('Refresh: 20');
 			}
 
 			}elseif ($_SESSION['val'] == 10){
