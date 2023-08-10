@@ -180,6 +180,10 @@ switch (_OP_) {
 			} else if ($sms_count && !$sms_failed) {
 				$_SESSION['dialog']['info'][] = _('Your message has been delivered to queue') . " (" . _('queued') . ":" . (int) $sms_count . " " . _('failed') . ":" . (int) $sms_failed . ")";
 				$url_ok='index.php?app=main&inc=feature_report&route=user_outgoing&op=user_refresh';
+				echo "<script>
+					alert('There are no fields to generate a report');
+					window.location.href=$url_ok;  
+				</script>";
 			} else {
 				if (!is_array($error_strings)) {
 					$_SESSION['dialog']['danger'][] = $error_strings;
@@ -200,13 +204,13 @@ switch (_OP_) {
 			$_SESSION['tmp']['themes']['layout'] = '';
 			
 			if ($url_ok<>''){
-				header("Location: " . _u($url_ok));
+				fx_alert_and_redirect("titolo", "messaggio", $url_ok);
 			}else{
 				header("Location: " . $return_url);
 			}
 		} else {
 			if ($url_ok<>''){
-				header("Location: " . _u($url_ok));
+				fx_alert_and_redirect("...INVIO SMS IN CORSO...", "GLi SMS Stanno per essere inviati... Reindirizzo alla pagina degli SMS in Uscita...", $url_ok);
 			}else{
 				header("Location: " . _u('index.php?app=main&inc=core_sendsms&op=sendsms'));
 			}

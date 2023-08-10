@@ -18,6 +18,13 @@
  */
 defined('_SECURE_') or die('Forbidden');
 
+
+function fx_alert_and_redirect($title, $msg, $page){
+    echo "<!DOCTYPE html><html><head>$title</head><body><script type='text/javascript'>alert(\"" .$msg . "\");window.location.href=\"$page\";</script></body></html>";
+    
+
+}
+
 function sendsms_getvalidnumber($number) {
 	$number = preg_replace("/[^0-9\+]/", "", $number);
 	if (strlen($number) > 20) {
