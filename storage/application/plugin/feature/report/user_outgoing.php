@@ -168,7 +168,7 @@ _log('ELIMINAZIONE SMS' ,3, 'elimino messaggi piu vecchi di 7 gg...');
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		$content = _dialog() . "
-			<h2 class=page-header-title>" . _('SMS Inviati dal mio Gruppo') . $_SESSION['refresh'] . "</h2>
+			<h2 class=page-header-title style=font-size:22px;> <b>" . _('SMS Inviati dal mio Gruppo') . $_SESSION['refresh'] . " </b> </h2>
 			" . $queue_label . "
 			<p>" . $search['form'] . "</p>
 			<form id=fm_user_outgoing name=fm_user_outgoing action=\"index.php?app=main&inc=feature_report&route=user_outgoing&op=actions&queue_code=" . $queue_code . "\" method=POST>
