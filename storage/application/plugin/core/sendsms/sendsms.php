@@ -180,10 +180,6 @@ switch (_OP_) {
 			} else if ($sms_count && !$sms_failed) {
 				$_SESSION['dialog']['info'][] = _('Your message has been delivered to queue') . " (" . _('queued') . ":" . (int) $sms_count . " " . _('failed') . ":" . (int) $sms_failed . ")";
 				$url_ok='index.php?app=main&inc=feature_report&route=user_outgoing&op=user_refresh';
-				echo "<script>
-					alert('There are no fields to generate a report');
-					window.location.href=$url_ok;  
-				</script>";
 			} else {
 				if (!is_array($error_strings)) {
 					$_SESSION['dialog']['danger'][] = $error_strings;
