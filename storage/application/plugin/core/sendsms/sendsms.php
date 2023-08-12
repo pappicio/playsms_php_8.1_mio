@@ -27,7 +27,10 @@ if (auth_issubuser()) {
 
 switch (_OP_) {
 	case "sendsms":
-		
+		$_SESSION['val']=12;
+		$_SESSION['refresh']=' (autorefresh OFF)';
+		header('Refresh: 99999999999');
+
 		// get $to and $message from session or query string
 		$to = stripslashes($_REQUEST['to']);
 		$message = (stripslashes($_REQUEST['message']) ? stripslashes($_REQUEST['message']) : trim(stripslashes($_SESSION['tmp']['sendsms']['message'])));
