@@ -182,6 +182,15 @@ function phonebook_hook_phonebook_getgroupbyuid($uid, $orderby = "") {
 	return $ret;
 }
 
+function honebook_getgroupbyuid($uid) {
+	$db_query = "SELECT id AS gpid FROM " . _DB_PREF_ . "_featurePhonebook_group WHERE uid='$uid'";
+	$db_result = dba_query($db_query);
+	$db_row = dba_fetch_array($db_result);
+	$ret = $db_row['id'];
+	return $ret;
+}
+
+
 function phonebook_hook_phonebook_search($uid, $keyword = "", $count = 0, $exact = FALSE) {
 	$ret = array();
 	
@@ -328,6 +337,10 @@ function phonebook_hook_phonebook_webservices_output($keyword, $items) {
 		} else {
 			$list = phonebook_search($user_config['uid'], $keyword);
 			foreach ($list as $data) {
+			if (strrpos($data['p_desc'], "@")==true) {
+				continue;
+			} 
+
 				$items[] = array(
 					'id' => $data['p_num'],
 					'text' => $data['p_desc'] . ' (' . $data['p_num'] . ')' 
@@ -400,7 +413,7 @@ function phonebook_group_add($uid, $group_name, $group_code, $flag_sender = 0) {
 		// returns NULL when group code is already exists 
 		return NULL;
 	} else {
-		$db_query = "INSERT INTO " . _DB_PREF_ . "_featurePhonebook_group (uid,name,code,flag_sender) VALUES ('$uid','$group_name','$group_code','$flag_sender')";
+		$db_query = "INSERT INTO " . _DB_PREF_ . "_featurePhonebook_group (id,uid,name,code,flag_sender) VALUES ('$uid','$uid','$group_name','$group_code','$flag_sender')";
 		if ($id = dba_insert_id($db_query)) {
 			
 			// returns group ID

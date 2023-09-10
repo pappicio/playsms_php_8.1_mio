@@ -105,8 +105,8 @@ nel girhub!!!
 			multiple: true,
 			placeholder: "{{ SENDTO_PLACEHOLDER_TEXT }}",
 			allowClear: true,
-			selectOnBlur: true,
-			minimumInputLength: 2,
+		<!-- 	selectOnBlur: true,	-->
+		<!--	minimumInputLength: 1,	-->
 			separator: ",",
 			tokenSeparators: [","],
 			width: "resolve",
@@ -129,6 +129,8 @@ nel girhub!!!
 				dataType: 'json',
 				quietMillis: 100,
 				data: function (term, page) {
+					if (term == '') term='_';
+
 					return {
 						app: "webservices",
 						op: "phonebook",
