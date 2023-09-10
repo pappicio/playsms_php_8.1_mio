@@ -99,7 +99,7 @@ switch (_OP_) {
 					}
 					$i++;
 				}
-				$entries = array_unique($entries);
+				$entries = array_unique($entries,SORT_REGULAR);
 				$session_import = 'schedule_' . md5(core_get_random_string());
 				$_SESSION['tmp'][$session_import] = array();
 				$i = 0;

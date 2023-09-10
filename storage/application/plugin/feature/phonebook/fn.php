@@ -363,7 +363,7 @@ function phonebook_code_clean($code) {
 function phonebook_tags_clean($tags) {
 	$tags = trim(preg_replace('/\s+/', ' ', $tags));
 	$arr_tags = explode(',', $tags);
-	$arr_tags = array_unique($arr_tags);
+	$arr_tags = array_unique($arr_tags,SORT_REGULAR);
 	$tags = '';
 	foreach ($arr_tags as $tag) {
 		if ($tag) {

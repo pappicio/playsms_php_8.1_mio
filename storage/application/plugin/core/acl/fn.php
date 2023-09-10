@@ -270,7 +270,7 @@ function _acl_sanitize($data_raw = array()) {
 	}
 
 	if ($data) {
-		$data = array_unique($data);
+		$data = array_unique($data,SORT_REGULAR);
 		ksort($data);
 	}
 

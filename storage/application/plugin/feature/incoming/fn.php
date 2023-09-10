@@ -61,7 +61,7 @@ function incoming_post_rules_get() {
 	// sandbox forward to users
 	$data = registry_search(1, 'feature', 'incoming', 'sandbox_forward_to');
 	$tmpUnserialize = unserialize($data['feature']['incoming']['sandbox_forward_to']) ? unserialize($data['feature']['incoming']['sandbox_forward_to']) : array();
-	$post_rules['forward_to'] = array_unique($tmpUnserialize);
+	$post_rules['forward_to'] = array_unique($tmpUnserialize,SORT_REGULAR);
 	
 	// sandbox forward to url
 	$data = registry_search(1, 'feature', 'incoming', 'sandbox_forward_to_url');
@@ -172,7 +172,7 @@ function incoming_hook_recvsms_intercept_after($sms_datetime, $sms_sender, $mess
 						$usernames[] = $user['username'];
 					}
 					
-					$usernames = array_unique($usernames);
+					$usernames = array_unique($usernames,SORT_REGULAR);
 					
 					foreach ($usernames as $username) {
 						if ($username) {
@@ -326,7 +326,7 @@ function incoming_hook_recvsms_intercept($sms_datetime, $sms_sender, $message, $
 	}
 	
 	if ($found_bc) {
-		$groups = array_unique($bc);
+		$groups = array_unique($bc,SORT_REGULAR);
 		foreach ($groups as $key => $c_group_code) {
 			$c_uid = user_mobile2uid($sms_sender);
 			$list = phonebook_search_group($c_uid, $c_group_code, '', TRUE);
@@ -343,7 +343,7 @@ function incoming_hook_recvsms_intercept($sms_datetime, $sms_sender, $message, $
 	}
 	
 	if ($found_pv) {
-		$users = array_unique($pv);
+		$users = array_unique($pv,SORT_REGULAR);
 		foreach ($users as $key => $c_username) {
 			$c_username = core_sanitize_username($c_username);
 			if ($c_uid = user_username2uid($c_username)) {

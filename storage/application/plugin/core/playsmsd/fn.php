@@ -348,7 +348,7 @@ function playsmsd() {
 		$gateways[] = $smsc_data['gateway'];
 	}
 	if (is_array($gateways)) {
-		$gateways = array_unique($gateways);
+		$gateways = array_unique($gateways,SORT_REGULAR);
 		foreach ($gateways as $gateway) {
 			core_hook($gateway, 'playsmsd');
 		}
@@ -371,7 +371,7 @@ function playsmsd_loop($command, $command_param) {
         $gateways[] = $smsc_data['gateway'];
     }
     if (is_array($gateways)) {
-        $gateways = array_unique($gateways);
+        $gateways = array_unique($gateways,SORT_REGULAR);
         foreach ($gateways as $gateway) {
             core_hook($gateway, 'playsmsd_loop', array(
                 $command,
@@ -402,7 +402,7 @@ function playsmsd_once($command, $command_param) {
 		$gateways[] = $smsc_data['gateway'];
 	}
 	if (is_array($gateways)) {
-		$gateways = array_unique($gateways);
+		$gateways = array_unique($gateways,SORT_REGULAR);
 		foreach ($gateways as $gateway) {
 			core_hook($gateway, 'playsmsd_once', array(
 				$command,

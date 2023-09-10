@@ -1349,7 +1349,7 @@ function sendsms_hook_playsmsd_loop($command, $command_param) {
 			}
 
 			// fork jobs
-			$queue_jobs = array_unique($queue_jobs);
+			$queue_jobs = array_unique($queue_jobs,SORT_REGULAR);
 			if (count($queue_jobs) > 0) {
 				foreach ($queue_jobs as $q) {
 					if ($pid = playsmsd_run_once('sendqueue', $q)) {

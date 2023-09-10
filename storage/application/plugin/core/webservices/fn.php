@@ -554,7 +554,7 @@ function webservices_output($operation, $requests, $returns) {
 		$gateways[] = $smsc_data['gateway'];
 	}
 	if (is_array($gateways)) {
-		$gateways = array_unique($gateways);
+		$gateways = array_unique($gateways,SORT_REGULAR);
 		foreach ($gateways as $gateway) {
 			if ($ret_intercept = core_hook($gateway, 'webservices_output', array(
 				$operation,

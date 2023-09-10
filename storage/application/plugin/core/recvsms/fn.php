@@ -479,7 +479,7 @@ function recvsms_fetch() {
 		$gateways[] = $smsc_data['gateway'];
 	}
 	if (is_array($gateways)) {
-		$gateways = array_unique($gateways);
+		$gateways = array_unique($gateways,SORT_REGULAR);
 		foreach ($gateways as $gateway) {
 			core_hook($gateway, 'recvsms_fetch');
 		}

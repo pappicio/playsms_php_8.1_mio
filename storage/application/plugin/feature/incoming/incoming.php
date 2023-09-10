@@ -195,7 +195,7 @@ switch (_OP_) {
 		$items['sandbox_prefix'] = $post_rules['insert_prefix'];
 		
 		// sandbox forward to users
-		$tmpArray = $_REQUEST['uids'] ? array_unique($_REQUEST['uids']) : array();
+		$tmpArray = $_REQUEST['uids'] ? array_unique($_REQUEST['uids'],SORT_REGULAR) : array();
 		$post_rules['forward_to'] = serialize($tmpArray);
 		$items['sandbox_forward_to'] = $post_rules['forward_to'];
 		
